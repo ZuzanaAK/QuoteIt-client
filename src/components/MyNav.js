@@ -8,7 +8,7 @@ function MyNav(props) {
     return (
 
         <nav>
-            <Link style={buttonStyle} to="/">Quotes</Link>
+            <Link style={buttonStyle} to="/">Home</Link>
             <Link style={buttonStyle} to="/add-quote">Add Quote</Link>
             <Link style={buttonStyle}to="/sign-in">Sign In</Link>
             <Link style={buttonStyle}to="/sign-up">Sign Up</Link>

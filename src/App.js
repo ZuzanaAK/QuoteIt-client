@@ -6,7 +6,7 @@ import {Switch , Route, withRouter} from 'react-router-dom'
 import MyNav from './components/MyNav'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
-
+import AddQuoteForm from './components/AddQuoteForm'
 
 class App extends Component {
 
@@ -85,6 +85,34 @@ class App extends Component {
       })
   }
 
+  handleAdd = (e) => {
+    e.preventDefault()
+    const {quote, author, category, image} = e.target
+    let imageFile = image.files[0]
+
+    let uploadForm = new FormData()
+    uploadForm.append('imageUrl', imageFile)
+
+    axios.post('http://localhost:5000/api/upload', uploadForm)
+      .then((response) => {
+
+          let newQuote = {
+            quote: quote.value,
+            author: author.value,
+            category: category.value,
+            image: response.data.image
+          }
+      
+          axios.post('http://localhost:5000/api/create', newQuote)
+          .then((response) =>{
+              this.setState({
+                quotes: [ response.data , ...this.state.quotes]
+              }, () => {
+                this.props.history.push('/')
+              })      
+          })
+      })
+  }
 
 
   render() {
@@ -104,9 +132,12 @@ class App extends Component {
           <Route path="/sign-up" render={(routeProps) => {
             return <SignUp onSignUp={this.handleSignUp} {...routeProps} />
           }}/>
-          <Route exact path="/" />
+          {/* <Route exact path="/" /> */}
+          <Route path="/add-quote" render={() => {
+              return <AddQuoteForm onAdd={this.handleAdd} />
+            }} />
           
-        </Switch>
+        </Switch> 
       </div>
       )
     }
