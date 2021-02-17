@@ -12,7 +12,7 @@ function MyNav(props) {
             <Link style={buttonStyle} to="/add-quote">Add Quote</Link>
             <Link style={buttonStyle}to="/sign-in">Sign In</Link>
             <Link style={buttonStyle}to="/sign-up">Sign Up</Link>
-            {/* <button onClick={props.onLogout}>Logout</button> */}
+            <button onClick={props.onLogout}>Logout</button>
         </nav>
     
     )
