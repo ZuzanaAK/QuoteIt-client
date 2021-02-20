@@ -7,6 +7,7 @@ import MyNav from './components/MyNav'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import AddQuoteForm from './components/AddQuoteForm'
+import EditForm from './components/EditForm'
 
 class App extends Component {
 
@@ -27,9 +28,9 @@ class App extends Component {
 
     axios.get('http://localhost:5000/api/quotes')
     .then((response) => {
-      // response.data
+      console.log(response.data) 
       this.setState({
-        todos: response.data
+        quotes: response.data
       })
     })
    }
@@ -114,7 +115,6 @@ class App extends Component {
       })
   }
 
-
   render() {
 
     const {loggedInUser} = this.state
@@ -135,7 +135,10 @@ class App extends Component {
           {/* <Route exact path="/" /> */}
           <Route path="/add-quote" render={() => {
               return <AddQuoteForm onAdd={this.handleAdd} />
-            }} />
+          }} />
+          <Route path="/quote/:quoteId/edit" render={(routeProps) => {
+              return <EditForm onEdit={this.handleEdit} {...routeProps} />
+          }} />  
           
         </Switch> 
       </div>
