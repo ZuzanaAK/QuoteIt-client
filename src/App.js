@@ -8,6 +8,7 @@ import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import AddQuoteForm from './components/AddQuoteForm'
 import EditForm from './components/EditForm'
+import QuoteList from './components/QuoteList'
 
 class App extends Component {
 
@@ -28,7 +29,7 @@ class App extends Component {
 
     axios.get('http://localhost:5000/api/quotes')
     .then((response) => {
-      console.log(response.data) 
+       console.log(response.data) 
       this.setState({
         quotes: response.data
       })
@@ -115,6 +116,29 @@ class App extends Component {
       })
   }
 
+  handleEdit = (quote) => {
+    axios.patch(`http://localhost:5000/api/quotes/${quote._id}`, {
+      quote: quote.quote,
+      author: quote.author,
+      category: quote.category,
+      image: quote.image
+    })
+    .then(() => {
+        let updatedQuotes = this.state.todos.map((myQuote) => {
+          if (myQuote._id == quote._id) {
+            myQuote = quote
+          }
+          return myQuote
+        })
+
+        this.setState({
+          quotes: updatedQuotes
+        }, () => {
+          this.props.history.push('/')
+        })
+    })
+  }
+
   render() {
 
     const {loggedInUser} = this.state
@@ -132,7 +156,9 @@ class App extends Component {
           <Route path="/sign-up" render={(routeProps) => {
             return <SignUp onSignUp={this.handleSignUp} {...routeProps} />
           }}/>
-          {/* <Route exact path="/" /> */}
+          <Route exact path="/" render={() => {
+              return <QuoteList quotes={this.state.quotes} />
+            }} />
           <Route path="/add-quote" render={() => {
               return <AddQuoteForm onAdd={this.handleAdd} />
           }} />
