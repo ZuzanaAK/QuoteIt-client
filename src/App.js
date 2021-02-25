@@ -164,7 +164,7 @@ class App extends Component {
               return <QuoteDetail loggedInUser={loggedInUser} onDelete={this.handleDelete}  {...routeProps} />
           }} />
           <Route path="/add-quote" render={() => {
-              return <AddQuoteForm onAdd={this.handleAdd} />
+              return <AddQuoteForm loggedInUser={loggedInUser} onAdd={this.handleAdd} />
           }} />
           <Route path="/quote/:quoteId/edit" render={(routeProps) => {
               return <EditForm onEdit={this.handleEdit} {...routeProps} />
