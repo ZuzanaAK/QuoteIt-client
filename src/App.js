@@ -9,6 +9,7 @@ import SignUp from './components/SignUp'
 import AddQuoteForm from './components/AddQuoteForm'
 import EditForm from './components/EditForm'
 import QuoteList from './components/QuoteList'
+import QuoteDetail from './components/QuoteDetail'
 
 class App extends Component {
 
@@ -158,7 +159,10 @@ class App extends Component {
           }}/>
           <Route exact path="/" render={() => {
               return <QuoteList quotes={this.state.quotes} />
-            }} />
+          }} />
+          <Route exact path="/quote/:quoteId" render={(routeProps) => {
+              return <QuoteDetail loggedInUser={loggedInUser} onDelete={this.handleDelete}  {...routeProps} />
+          }} />
           <Route path="/add-quote" render={() => {
               return <AddQuoteForm onAdd={this.handleAdd} />
           }} />
