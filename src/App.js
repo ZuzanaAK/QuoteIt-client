@@ -29,13 +29,13 @@ class App extends Component {
         })
     }
 
-    axios.get('http://localhost:5000/api/quotes')
+    axios.get('http://localhost:5000/api/quotes', {withCredentials: true})
     .then((response) => {
        console.log(response.data) 
-      this.setState({
-        quotes: response.data
+        this.setState({
+          quotes: response.data
+        })
       })
-    })
    }
 
   handleSignUp = (e) => {
@@ -103,7 +103,7 @@ class App extends Component {
     let uploadForm = new FormData()
     uploadForm.append('imageUrl', imageFile)
 
-    axios.post('http://localhost:5000/api/upload', uploadForm)
+    axios.post('http://localhost:5000/api/upload', uploadForm, {withCredentials: true})
       .then((response) => {
 
           let newQuote = {
@@ -113,7 +113,7 @@ class App extends Component {
             image: response.data.image
           }
       
-          axios.post('http://localhost:5000/api/create', newQuote)
+          axios.post('http://localhost:5000/api/create', newQuote, {withCredentials: true})
           .then((response) =>{
               this.setState({
                 quotes: [ response.data , ...this.state.quotes]
@@ -129,7 +129,7 @@ class App extends Component {
       quote: quote.quote,
       author: quote.author,
       category: quote.category,
-    })
+    }, {withCredentials: true})
     .then(() => {
         let updatedQuotes = this.state.quotes.map((myQuote) => {
           if (myQuote._id == quote._id) {
@@ -147,7 +147,7 @@ class App extends Component {
   }
 
   handleDelete = (quoteId) => {
-    axios.delete(`http://localhost:5000/api/quotes/${quoteId}`)
+    axios.delete(`http://localhost:5000/api/quotes/${quoteId}`, {}, {withCredentials: true})
       .then(() => {
           let filteredQuotes = this.state.quotes.filter((quote) => {
               return quote._id !== quoteId
