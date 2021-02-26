@@ -9,7 +9,8 @@ class EditForm extends Component {
 
     componentDidMount() {
        let quoteId = this.props.match.params.quoteId
-        axios.get(`http://localhost:5000/api/todos/${quoteId}`)
+       console.log("quoteId:", this.props.match.params.quoteId)
+        axios.get(`http://localhost:5000/api/quotes/${quoteId}`)
             .then((response) => {
                 this.setState({
                     quote: response.data
@@ -18,55 +19,55 @@ class EditForm extends Component {
     }
 
     handleQuoteChange = (e) => {
-       let cloneQoute = JSON.parse(JSON.stringify(this.state.quote))
-       cloneQoute.name =  e.target.value
+       let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
+       cloneQuote.name =  e.target.value
        this.setState({
-            quote: cloneQoute
+            quote: cloneQuote
        })
     }
 
     handleAuthorChange = (e) => {
-        let cloneQoute = JSON.parse(JSON.stringify(this.state.quote))
-        cloneQoute.author =  e.target.value
+        let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
+        cloneQuote.author =  e.target.value
         this.setState({
-            quote: cloneQoute
+            quote: cloneQuote
         })
     }
 
     handleCategoryChange = (e) => {
-        let cloneQoute = JSON.parse(JSON.stringify(this.state.quote))
-        cloneQoute.category =  e.target.value
+        let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
+        cloneQuote.category =  e.target.value
         this.setState({
-            quote: cloneQoute
+            quote: cloneQuote
         })
     }
 
-    handleImageChange = (e) => {
-        let cloneQoute = JSON.parse(JSON.stringify(this.state.quote))
-        cloneQoute.category =  e.target.value
-        this.setState({
-            quote: cloneQoute
-        })
-    }
+    // handleImageChange = (e) => {
+    //     let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
+    //     cloneQuote.category =  e.target.value
+    //     this.setState({
+    //         quote: cloneQuote
+    //     })
+    // }
 
     render() {
-        const {quote, author, category, image} = this.state.quote
+        const {quote, author, category} = this.state.quote
 
         return (
             <div>
-            <p>quote</p>
-                <input onChange={this.handleQuoteChange} type="text" value={quote}></input>
-                <br/>
-            <p>author</p>
-                <input onChange={this.handleAuthorChange} type="text" value={author} ></input>
-                <br/>
-            <p>category</p>
-                <input onChange={this.handleCategoryChange} type="text" value={category} ></input>
-                <br/>
-            <p>image</p>
-                <input onChange={this.handleImageChange} type="file" value={image} ></input>
-                <br/>
-                <button onClick={() => { this.props.onEdit(this.state.quote) }} >Edit</button>
+                <p>quote</p>
+                    <input onChange={this.handleQuoteChange} type="text" value={quote}></input>
+                    <br/>
+                <p>author</p>
+                    <input onChange={this.handleAuthorChange} type="text" value={author} ></input>
+                    <br/>
+                <p>category</p>
+                    <input onChange={this.handleCategoryChange} type="text" value={category} ></input>
+                    <br/>
+                {/* <p>image</p>
+                    <input onChange={this.handleImageChange} type="text" value={image} ></input> */}
+                    <br/>
+                    <button onClick={() => { this.props.onEdit(this.state.quote) }} >Submit Changes</button>
             </div>
         )
     }

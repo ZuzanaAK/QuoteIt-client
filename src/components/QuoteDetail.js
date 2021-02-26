@@ -27,10 +27,6 @@ class QuoteDetail extends Component {
         const {quote, author, _id, category, image} = this.state.quote
         const {loggedInUser} = this.props
 
-        // if (!loggedInUser) {
-        //    return <Redirect to={"/sign-in"}/>
-        // }
-
         return (
             <div>
                 <div>Name: {quote}</div>
@@ -40,7 +36,7 @@ class QuoteDetail extends Component {
                 {
                     loggedInUser ? (
                     <div>
-                        <Link to={`/quotes/${_id}/edit`} ><button>Edit</button></Link>
+                        <Link to={`/quote/${_id}/edit`} ><button>Edit</button></Link>
                         <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
                     </div>) : (
                     null

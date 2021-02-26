@@ -129,10 +129,9 @@ class App extends Component {
       quote: quote.quote,
       author: quote.author,
       category: quote.category,
-      image: quote.image
     })
     .then(() => {
-        let updatedQuotes = this.state.todos.map((myQuote) => {
+        let updatedQuotes = this.state.quotes.map((myQuote) => {
           if (myQuote._id == quote._id) {
             myQuote = quote
           }
