@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //this is to make sure that user will stay logged in after the page refreshes
     if (!this.state.loggedInUser) {
       axios.get('http://localhost:5000/api/user', {withCredentials: true})
         .then((response) => {
@@ -53,9 +54,16 @@ class App extends Component {
         this.props.history.push("/")
       })
     })
+    .catch((error) => {
+      console.log(error.response)
+      this.setState({
+        errorMessage: error.response.data.errorMessage
+      })
+    })
   }
 
   handleSignIn = (e) => {
+    e.preventDefault()
     e.preventDefault()
     const {email, password} = e.target
 
@@ -75,7 +83,6 @@ class App extends Component {
         this.setState({
           errorMessage: err.response.data.error
         })
-
     })
   }
 
@@ -138,6 +145,22 @@ class App extends Component {
           this.props.history.push('/')
         })
     })
+  }
+
+  handleDelete = (quoteId) => {
+    axios.delete(`http://localhost:5000/api/quotes/${quoteId}`)
+      .then(() => {
+          let filteredQuotes = this.state.quotes.filter((quote) => {
+              return quote._id !== quoteId
+          })
+
+          this.setState({
+            quotes: filteredQuotes
+          }, () => {
+            this.props.history.push('/')
+          })
+      })
+
   }
 
   render() {
