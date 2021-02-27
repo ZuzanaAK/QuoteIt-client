@@ -10,12 +10,14 @@ import AddQuoteForm from './components/AddQuoteForm'
 import EditForm from './components/EditForm'
 import QuoteList from './components/QuoteList'
 import QuoteDetail from './components/QuoteDetail'
+import Profile from './components/Profile'
 
 class App extends Component {
 
   state = {
     loggedInUser: null,
-    quotes: []
+    quotes: [],
+    profile: null,
   }
 
   componentDidMount() {
@@ -29,14 +31,29 @@ class App extends Component {
         })
     }
 
-    axios.get('http://localhost:5000/api/quotes', {withCredentials: true})
+    axios.get('http://localhost:5000/api/quotes')
     .then((response) => {
        console.log(response.data) 
-        this.setState({
-          quotes: response.data
-        })
+      this.setState({
+        quotes: response.data
       })
+    })
+
+    if (!this.state.profile) {
+      axios
+        .get(`http://localhost:5000/api/profile`, { withCredentials: true })
+        .then((response) => {
+          console.log("resp is : ", response);
+          this.setState({
+            profile: response.data,
+          });
+        });
+    }
+
+
    }
+
+
 
   handleSignUp = (e) => {
     e.preventDefault()
@@ -190,7 +207,10 @@ class App extends Component {
           }} />
           <Route path="/quote/:quoteId/edit" render={(routeProps) => {
               return <EditForm onEdit={this.handleEdit} {...routeProps} />
-          }} />  
+          }} />
+          <Route exact path="/profile" render={(routeProps) => {
+          return <Profile onDelete={this.handleDelete} loggedInUser={loggedInUser} {...routeProps}/>
+          }}/>
           
         </Switch> 
       </div>
