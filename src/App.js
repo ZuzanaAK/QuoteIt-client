@@ -23,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     //this is to make sure that user will stay logged in after the page refreshes
     if (!this.state.loggedInUser) {
-      axios.get('http://localhost:5000/api/user', {withCredentials: true})
+      axios.get(`${process.env.REACT_APP_API_URL}/user`, {withCredentials: true})
         .then((response) => {
             this.setState({
               loggedInUser: response.data
@@ -31,7 +31,7 @@ class App extends Component {
         })
     }
 
-    axios.get('http://localhost:5000/api/quotes')
+    axios.get(`${process.env.REACT_APP_API_URL}/quotes`)
     .then((response) => {
        console.log(response.data) 
       this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
 
     if (!this.state.profile) {
       axios
-        .get(`http://localhost:5000/api/profile`, { withCredentials: true })
+        .get(`${process.env.REACT_APP_API_URL}/profile`, { withCredentials: true })
         .then((response) => {
           console.log("resp is : ", response);
           this.setState({
@@ -59,7 +59,7 @@ class App extends Component {
     e.preventDefault()
     const {username, email, password} = e.target
 
-    axios.post("http://localhost:5000/api/signup", {
+    axios.post(`${process.env.REACT_APP_API_URL}/signup`, {
       username: username.value,
       email: email.value,
       password: password.value,
@@ -84,7 +84,7 @@ class App extends Component {
     e.preventDefault()
     const {email, password} = e.target
 
-    axios.post("http://localhost:5000/api/signin", {
+    axios.post(`${process.env.REACT_APP_API_URL}/signin`, {
       email: email.value,
       password: password.value,
     }, {withCredentials: true})
@@ -104,7 +104,7 @@ class App extends Component {
   }
 
   handleLogOut = (e) => {
-    axios.post('http://localhost:5000/api/logout', {}, {withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, {withCredentials: true})
       .then(() => {
           this.setState({
             loggedInUser: null
@@ -120,7 +120,7 @@ class App extends Component {
     let uploadForm = new FormData()
     uploadForm.append('imageUrl', imageFile)
 
-    axios.post('http://localhost:5000/api/upload', uploadForm, {withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/upload`, uploadForm, {withCredentials: true})
       .then((response) => {
 
           let newQuote = {
@@ -142,7 +142,7 @@ class App extends Component {
   }
 
   handleEdit = (quote) => {
-    axios.patch(`http://localhost:5000/api/quotes/${quote._id}`, {
+    axios.patch(`${process.env.REACT_APP_API_URL}/quotes/${quote._id}`, {
       quote: quote.quote,
       author: quote.author,
       category: quote.category,
@@ -164,7 +164,7 @@ class App extends Component {
   }
 
   handleDelete = (quoteId) => {
-    axios.delete(`http://localhost:5000/api/quotes/${quoteId}`, {}, {withCredentials: true})
+    axios.delete(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {}, {withCredentials: true})
       .then(() => {
           let filteredQuotes = this.state.quotes.filter((quote) => {
               return quote._id !== quoteId

@@ -14,7 +14,7 @@ export default class Profile extends Component {
       //fetch loggedin user information displayed on profile
       if (!this.state.profile) {
         axios
-          .get('http://localhost:5000/api/profile', { withCredentials: true })
+          .get(`${process.env.REACT_APP_API_URL}/profile`, { withCredentials: true })
           .then((resp) => {
             console.log("resp is : ", resp);
             console.log("loggedInUser is: ", loggedInUser);
@@ -26,7 +26,7 @@ export default class Profile extends Component {
   
       //to get loggedin user's quotes
       axios
-        .get('http://localhost:5000/api/user-quotes', { withCredentials: true })
+        .get(`${process.env.REACT_APP_API_URL}/api/user-quotes`, { withCredentials: true })
         .then((quotes) => {
           console.log("quotes are: ", quotes.data);
           console.log("loggedInUser._id is", loggedInUser._id);

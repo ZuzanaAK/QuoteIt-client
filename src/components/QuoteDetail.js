@@ -14,7 +14,7 @@ class QuoteDetail extends Component {
        let quoteId = this.props.match.params.quoteId
        console.log(this.props)
 
-        axios.get(`http://localhost:5000/api/quotes/${quoteId}`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {withCredentials: true})
             .then((response) => {
                 this.setState({
                     quote: response.data
