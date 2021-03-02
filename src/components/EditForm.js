@@ -42,13 +42,6 @@ class EditForm extends Component {
         })
     }
 
-    // handleImageChange = (e) => {
-    //     let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
-    //     cloneQuote.category =  e.target.value
-    //     this.setState({
-    //         quote: cloneQuote
-    //     })
-    // }
 
     render() {
         const {quote, author, category} = this.state.quote
@@ -63,9 +56,6 @@ class EditForm extends Component {
                     <br/>
                 <p>category</p>
                     <input onChange={this.handleCategoryChange} type="text" value={category} ></input>
-                    <br/>
-                {/* <p>image</p>
-                    <input onChange={this.handleImageChange} type="text" value={image} ></input> */}
                     <br/>
                     <button onClick={() => { this.props.onEdit(this.state.quote) }}>Submit Changes</button>
             </div>

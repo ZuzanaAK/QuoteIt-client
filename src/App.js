@@ -11,6 +11,7 @@ import EditForm from './components/EditForm'
 import QuoteList from './components/QuoteList'
 import QuoteDetail from './components/QuoteDetail'
 import Profile from './components/Profile'
+import FriendsApi from './components/FriendsApi'
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
     loggedInUser: null,
     quotes: [],
     profile: null,
+    // friendsQuotes: [],
   }
 
   componentDidMount() {
@@ -50,9 +52,15 @@ class App extends Component {
         })
     }
 
+    // axios.get("https://friends-quotes-api.herokuapp.com/quotes/random")
+    // .then((response) => {
+    //   console.log(response.data) 
+    //   this.setState({
+    //     friendsQuotes: response.data
+    //   })
+    // })
 
    }
-
 
 
   handleSignUp = (e) => {
@@ -179,6 +187,8 @@ class App extends Component {
 
   }
 
+
+
   render() {
 
     const {loggedInUser} = this.state
@@ -186,6 +196,7 @@ class App extends Component {
     return(
       <div>
         <MyNav loggedInUser={loggedInUser} onLogout={this.handleLogOut} />
+        <FriendsApi/>
 
         <Switch>
           <Route path="/sign-in" render={(routeProps) => {
@@ -207,7 +218,7 @@ class App extends Component {
               return <EditForm onEdit={this.handleEdit} {...routeProps} />
           }} />
           <Route exact path="/user-quotes" render={(routeProps) => {
-          return <Profile onDelete={this.handleDelete} loggedInUser={loggedInUser} {...routeProps}/>
+          return <Profile quotes={this.state.quotes} onDelete={this.handleDelete} onEdit={this.handleEdit} loggedInUser={loggedInUser} {...routeProps}/>
           }}/>
           
         </Switch> 

@@ -32,7 +32,7 @@ class QuoteDetail extends Component {
                 <div>Name: {quote}</div>
                 <div>Author: {author}</div>
                 <div>Category: {category}</div>
-                <img src={image} alt={quote}/>
+                {/* <img src={image} alt={quote}/> */}
                 {
                     loggedInUser ? (
                     <div>

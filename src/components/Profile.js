@@ -6,15 +6,24 @@ export default class Profile extends Component {
     state = {
       profile: null,
       quotes: [],
+      quote: {},
     };
   
     componentDidMount() {
+
+      let quoteId = this.props.match.params.quoteId
       const { loggedInUser } = this.props;
-      console.log(loggedInUser)
-      console.log("ZUZANA")
-      //fetch loggedin user information displayed on profile
+
+        axios.get(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {withCredentials: true})
+            .then((response) => {
+                this.setState({
+                    quote: response.data
+                })
+            })
+
+      
       if (!this.state.profile) {
-  
+
       //to get loggedin user's quotes
       axios
         .get(`${process.env.REACT_APP_API_URL}/user-quotes`, { withCredentials: true })
@@ -31,32 +40,35 @@ export default class Profile extends Component {
   
     render() {
       const { loggedInUser, quotes } = this.props;
-      // const {username} = this.state.profile
+      const {quote, author, _id, category} = this.state.quote
   
       if (!loggedInUser) {
-        return <Redirect to={"/sign-in"} />;
+        return (
+        <div>
+          <p>Please, sign in first</p>  
+          <Link to="/sign-in">Sign In</Link>
+          <Link to="/sign-up">Sign Up</Link> 
+        </div> );
       }
-  
-    //   if (!this.state.profile) {
-    //     return <h3>Loading...</h3>;
-    //   }
   
       return (
         <div>
-          {/* {this.state.profile.username} */}
             <h2>Welcome {loggedInUser.username} </h2>
             <div>
-            these are your quotes
+            These are your quotes:
               {this.state.quotes.map((elem, i) => {
                 return (
                   <div key={i}>
-                       <p>{elem.quote}</p>
-                      
+                       <p>quote: {elem.quote}</p>
+                       <p>author: {elem.author}</p>
+                       <p>category: {elem.category}</p>
+                       <Link to={`/quote/${_id}/edit`} ><button>Edit</button></Link>
+                        <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
                   </div>
                 )
               })}
             </div>          
         </div>
-      );
+      )
     }
   }

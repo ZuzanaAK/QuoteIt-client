@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 
 function QuoteList(props) {
     return (
+        
         <div>
-        In quote list  
+            
            {
                props.quotes.map((quote) => {
                     return <Link key={quote._id} to={`/quote/${quote._id}`}>
@@ -12,6 +13,7 @@ function QuoteList(props) {
                         </Link>
                })
            }
+
         </div>
     )
 }
