@@ -24,12 +24,12 @@ class QuoteDetail extends Component {
 
 
     render() {
-        const {quote, author, _id, category, image} = this.state.quote
+        const {quote, author, _id, category} = this.state.quote
         const {loggedInUser} = this.props
 
         return (
             <div>
-                <div>Name: {quote}</div>
+                <div>Quote: {quote}</div>
                 <div>Author: {author}</div>
                 <div>Category: {category}</div>
                 {/* <img src={image} alt={quote}/> */}

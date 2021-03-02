@@ -1,0 +1,20 @@
+.Card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    background-color: yellow;
+}
+
+.Card p {
+    margin: 20px;
+}
+
+.MainContainer {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}

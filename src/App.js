@@ -19,7 +19,6 @@ class App extends Component {
     loggedInUser: null,
     quotes: [],
     profile: null,
-    // friendsQuotes: [],
   }
 
   componentDidMount() {
@@ -51,16 +50,8 @@ class App extends Component {
           })
         })
     }
-
-    // axios.get("https://friends-quotes-api.herokuapp.com/quotes/random")
-    // .then((response) => {
-    //   console.log(response.data) 
-    //   this.setState({
-    //     friendsQuotes: response.data
-    //   })
-    // })
-
    }
+
 
 
   handleSignUp = (e) => {
@@ -196,7 +187,7 @@ class App extends Component {
     return(
       <div>
         <MyNav loggedInUser={loggedInUser} onLogout={this.handleLogOut} />
-        <FriendsApi/>
+        <FriendsApi />
 
         <Switch>
           <Route path="/sign-in" render={(routeProps) => {
@@ -206,7 +197,7 @@ class App extends Component {
             return <SignUp onSignUp={this.handleSignUp} {...routeProps} />
           }}/>
           <Route exact path="/" render={() => {
-              return <QuoteList quotes={this.state.quotes} />
+              return <QuoteList quotes={this.state.quotes} friendsQuotes={this.state.friendsQuotes}/>
           }} />
           <Route exact path="/quote/:quoteId" render={(routeProps) => {
               return <QuoteDetail loggedInUser={loggedInUser} onDelete={this.handleDelete}  {...routeProps} />

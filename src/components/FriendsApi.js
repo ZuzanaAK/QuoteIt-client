@@ -5,8 +5,7 @@ class FriendsApi extends Component {
 
 
     state ={
-        randomQuote: {},
-
+        friendsQuote: {},
     }
 
     componentDidMount() {
@@ -17,19 +16,21 @@ class FriendsApi extends Component {
             console.log('response.data is: ', response.data);
     
             this.setState({
-                randomQuote: response.data,
+                friendsQuote: response.data,
             });
           }
         );
       }
 
+
+
     render() {
 
-        const {quote, character} = this.state.randomQuote
+        const {quote, character} = this.state.friendsQuote
 
         return (
             <div>
-                <p>{quote} - {character}</p><button>next</button>
+                <p>{quote} - {character}</p>
             </div>
         )
     }
