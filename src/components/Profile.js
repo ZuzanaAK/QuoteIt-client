@@ -14,14 +14,6 @@ export default class Profile extends Component {
       let quoteId = this.props.match.params.quoteId
       const { loggedInUser } = this.props;
 
-        axios.get(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {withCredentials: true})
-            .then((response) => {
-                this.setState({
-                    quote: response.data
-                })
-            })
-
-      
       if (!this.state.profile) {
 
       //to get loggedin user's quotes
@@ -62,7 +54,7 @@ export default class Profile extends Component {
                        <p>quote: {elem.quote}</p>
                        <p>author: {elem.author}</p>
                        <p>category: {elem.category}</p>
-                       <Link to={`/quote/${_id}/edit`} ><button>Edit</button></Link>
+                       <Link to={`/quote/${elem._id}/edit`} ><button>Edit</button></Link>
                         <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
                   </div>
                 )
