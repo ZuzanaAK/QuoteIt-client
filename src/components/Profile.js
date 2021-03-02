@@ -10,35 +10,27 @@ export default class Profile extends Component {
   
     componentDidMount() {
       const { loggedInUser } = this.props;
-  
+      console.log(loggedInUser)
+      console.log("ZUZANA")
       //fetch loggedin user information displayed on profile
       if (!this.state.profile) {
-        axios
-          .get(`${process.env.REACT_APP_API_URL}/profile`, { withCredentials: true })
-          .then((resp) => {
-            console.log("resp is : ", resp);
-            console.log("loggedInUser is: ", loggedInUser);
-            this.setState({
-              profile: resp.data,
-            });
-          })
-      }
   
       //to get loggedin user's quotes
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/user-quotes`, { withCredentials: true })
+        .get(`${process.env.REACT_APP_API_URL}/user-quotes`, { withCredentials: true })
         .then((quotes) => {
-          console.log("quotes are: ", quotes.data);
-          console.log("loggedInUser._id is", loggedInUser._id);
+          console.log("PROFILE quotes are: ", quotes.data);
+          console.log("PROFILE loggedInUser._id is", loggedInUser._id);
   
           this.setState({
             quotes: quotes.data,
           })
         })
     }
+  }
   
     render() {
-      const { loggedInUser, username } = this.props;
+      const { loggedInUser, quotes } = this.props;
       // const {username} = this.state.profile
   
       if (!loggedInUser) {
@@ -51,14 +43,19 @@ export default class Profile extends Component {
   
       return (
         <div>
-
-            <h2>Welcome {this.state.profile.username}</h2>
+          {/* {this.state.profile.username} */}
+            <h2>Welcome {loggedInUser.username} </h2>
             <div>
-            {this.state.profile.quotes}
-            </div>
-
-
-                  
+            these are your quotes
+              {this.state.quotes.map((elem, i) => {
+                return (
+                  <div key={i}>
+                       <p>{elem.quote}</p>
+                      
+                  </div>
+                )
+              })}
+            </div>          
         </div>
       );
     }

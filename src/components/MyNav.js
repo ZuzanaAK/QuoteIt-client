@@ -10,7 +10,7 @@ function MyNav(props) {
         <nav>
             <Link style={buttonStyle} to="/">Home</Link>
             <Link style={buttonStyle} to="/add-quote">Add Quote</Link>
-            <Link style={buttonStyle} to="/profile">Profile</Link>
+            <Link style={buttonStyle} to="/user-quotes">Profile</Link>
             {
                 props.loggedInUser ? (
                     <button style={buttonStyle} onClick={props.onLogout}>Logout</button>

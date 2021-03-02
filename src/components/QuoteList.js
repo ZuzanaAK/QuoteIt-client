@@ -7,7 +7,7 @@ function QuoteList(props) {
         In quote list  
            {
                props.quotes.map((quote) => {
-                    return <Link to={`/quote/${quote._id}`}>
+                    return <Link key={quote._id} to={`/quote/${quote._id}`}>
                         <p key={quote._id} >{quote.quote}</p>
                         </Link>
                })

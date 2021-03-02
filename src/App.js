@@ -41,13 +41,13 @@ class App extends Component {
 
     if (!this.state.profile) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/profile`, { withCredentials: true })
+        .get(`${process.env.REACT_APP_API_URL}/user-quotes`, { withCredentials: true })
         .then((response) => {
-          console.log("resp is : ", response);
+          console.log("APP resp is : ", response);
           this.setState({
             profile: response.data,
-          });
-        });
+          })
+        })
     }
 
 
@@ -186,9 +186,7 @@ class App extends Component {
     return(
       <div>
         <MyNav loggedInUser={loggedInUser} onLogout={this.handleLogOut} />
-        {
-          loggedInUser ? (<h5 style={{color: '#255ed6'}} >Hey there, {loggedInUser.username}!</h5>) : null
-        }
+
         <Switch>
           <Route path="/sign-in" render={(routeProps) => {
             return <SignIn onSignIn={this.handleSignIn} {...routeProps} />
@@ -208,7 +206,7 @@ class App extends Component {
           <Route path="/quote/:quoteId/edit" render={(routeProps) => {
               return <EditForm onEdit={this.handleEdit} {...routeProps} />
           }} />
-          <Route exact path="/profile" render={(routeProps) => {
+          <Route exact path="/user-quotes" render={(routeProps) => {
           return <Profile onDelete={this.handleDelete} loggedInUser={loggedInUser} {...routeProps}/>
           }}/>
           
