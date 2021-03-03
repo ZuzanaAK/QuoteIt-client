@@ -1,38 +1,37 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Profile extends Component {
     state = {
-      profile: null,
+      profile: null, 
       quotes: [],
       quote: {},
     };
   
     componentDidMount() {
 
-      let quoteId = this.props.match.params.quoteId
-      const { loggedInUser } = this.props;
+      // let quoteId = this.props.match.params.quoteId
+      // const { loggedInUser } = this.props;
+      // console.log("THIS IS LOGGED IN USER IN PROFILE", loggedInUser.loggedInUser)
 
-      if (!this.state.profile) {
-
+    
       //to get loggedin user's quotes
       axios
         .get(`${process.env.REACT_APP_API_URL}/user-quotes`, { withCredentials: true })
         .then((quotes) => {
           console.log("PROFILE quotes are: ", quotes.data);
-          console.log("PROFILE loggedInUser._id is", loggedInUser._id);
+          // console.log("PROFILE loggedInUser._id is", loggedInUser._id);
   
           this.setState({
             quotes: quotes.data,
           })
         })
-    }
   }
   
     render() {
       const { loggedInUser, quotes } = this.props;
-      const {quote, author, _id, category} = this.state.quote
+      //const {quote, author, _id, category} = this.state.quote
   
       if (!loggedInUser) {
         return (
@@ -55,7 +54,7 @@ export default class Profile extends Component {
                        <p>author: {elem.author}</p>
                        <p>category: {elem.category}</p>
                        <Link to={`/quote/${elem._id}/edit`} ><button>Edit</button></Link>
-                        <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
+                        <button onClick={() => { this.props.onDelete(elem._id) } }>Delete</button>
                   </div>
                 )
               })}

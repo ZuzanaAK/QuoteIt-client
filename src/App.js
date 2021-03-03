@@ -29,6 +29,7 @@ class App extends Component {
             this.setState({
               loggedInUser: response.data
             })
+            console.log(response.data)
         })
     }
 
@@ -141,6 +142,7 @@ class App extends Component {
   }
 
   handleEdit = (quote) => {
+    console.log("I AM IN THE EDIT")
     axios.patch(`${process.env.REACT_APP_API_URL}/quotes/${quote._id}`, {
       quote: quote.quote,
       author: quote.author,
@@ -163,8 +165,10 @@ class App extends Component {
   }
 
   handleDelete = (quoteId) => {
+    console.log("I AM IN THE DELETE", quoteId)
     axios.delete(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {}, {withCredentials: true})
       .then(() => {
+        console.log("WE ARE INSIDE DELETE THEN BLOCK")
           let filteredQuotes = this.state.quotes.filter((quote) => {
               return quote._id !== quoteId
           })
@@ -175,6 +179,7 @@ class App extends Component {
             this.props.history.push('/')
           })
       })
+      .catch((err)=> console.log(err))
 
   }
 
