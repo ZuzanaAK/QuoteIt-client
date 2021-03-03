@@ -10,18 +10,12 @@ export default class Profile extends Component {
     };
   
     componentDidMount() {
-
-      // let quoteId = this.props.match.params.quoteId
-      // const { loggedInUser } = this.props;
-      // console.log("THIS IS LOGGED IN USER IN PROFILE", loggedInUser.loggedInUser)
-
     
       //to get loggedin user's quotes
       axios
         .get(`${process.env.REACT_APP_API_URL}/user-quotes`, { withCredentials: true })
         .then((quotes) => {
           console.log("PROFILE quotes are: ", quotes.data);
-          // console.log("PROFILE loggedInUser._id is", loggedInUser._id);
   
           this.setState({
             quotes: quotes.data,
@@ -31,7 +25,6 @@ export default class Profile extends Component {
   
     render() {
       const { loggedInUser, quotes } = this.props;
-      //const {quote, author, _id, category} = this.state.quote
   
       if (!loggedInUser) {
         return (

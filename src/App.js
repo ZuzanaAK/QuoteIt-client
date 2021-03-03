@@ -114,20 +114,20 @@ class App extends Component {
 
   handleAdd = (e) => {
     e.preventDefault()
-    const {quote, author, category, image} = e.target
-    let imageFile = image.files[0]
+    const {quote, author, category} = e.target
+    // let imageFile = image.files[0]
 
-    let uploadForm = new FormData()
-    uploadForm.append('imageUrl', imageFile)
+    // let uploadForm = new FormData()
+    // uploadForm.append('imageUrl', imageFile)
 
-    axios.post(`${process.env.REACT_APP_API_URL}/upload`, uploadForm, {withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/upload`, {}, {withCredentials: true})
       .then((response) => {
 
           let newQuote = {
             quote: quote.value,
             author: author.value,
             category: category.value,
-            image: response.data.image
+            // image: response.data.image
           }
       
           axios.post('http://localhost:5000/api/create', newQuote, {withCredentials: true})
@@ -205,7 +205,7 @@ class App extends Component {
               return <QuoteList quotes={this.state.quotes} friendsQuotes={this.state.friendsQuotes}/>
           }} />
           <Route exact path="/quote/:quoteId" render={(routeProps) => {
-              return <QuoteDetail loggedInUser={loggedInUser} onDelete={this.handleDelete}  {...routeProps} />
+              return <QuoteDetail {...routeProps} />
           }} />
           <Route path="/add-quote" render={() => {
               return <AddQuoteForm loggedInUser={loggedInUser} onAdd={this.handleAdd} />

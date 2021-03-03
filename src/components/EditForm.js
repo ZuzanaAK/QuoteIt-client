@@ -20,7 +20,7 @@ class EditForm extends Component {
 
     handleQuoteChange = (e) => {
        let cloneQuote = JSON.parse(JSON.stringify(this.state.quote))
-       cloneQuote.name =  e.target.value
+       cloneQuote.quote =  e.target.value
        this.setState({
             quote: cloneQuote
        })
@@ -44,20 +44,22 @@ class EditForm extends Component {
 
 
     render() {
-        const {quote, author, category} = this.state.quote
+        // const {quote, author, category} = this.state.quote
 
         return (
             <div>
+            
                 <p>quote</p>
-                    <input onChange={this.handleQuoteChange} type="text" value={quote}></input>
+                    <input onChange={this.handleQuoteChange} type="text" value={this.state.quote.quote}></input>
                     <br/>
                 <p>author</p>
-                    <input onChange={this.handleAuthorChange} type="text" value={author} ></input>
+                    <input onChange={this.handleAuthorChange} type="text" value={this.state.quote.author} ></input>
                     <br/>
                 <p>category</p>
-                    <input onChange={this.handleCategoryChange} type="text" value={category} ></input>
+                    <input onChange={this.handleCategoryChange} type="text" placeholder="article, book, movie, person, other" value={this.state.quote.category} ></input>
                     <br/>
                     <button onClick={() => { this.props.onEdit(this.state.quote) }}>Submit Changes</button>
+            
             </div>
         )
     }

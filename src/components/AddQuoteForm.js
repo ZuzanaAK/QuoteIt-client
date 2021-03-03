@@ -13,7 +13,6 @@ function AddQuoteForm(props) {
                 <input name="quote" type="text" placeholder="Enter quote"></input>
                 <input name="author" type="text" placeholder="Enter author"></input>
                 <input name="category" type="text" placeholder="article/book/movie/person/other"></input> 
-                <input type="file" name="image" />
                 <button type="submit">Submit</button>
             </form>
             ) : (
