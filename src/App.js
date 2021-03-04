@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Switch , Route, withRouter} from 'react-router-dom'
@@ -117,6 +117,7 @@ class App extends Component {
     const {quote, author, category} = e.target
     // let imageFile = image.files[0]
 
+
     // let uploadForm = new FormData()
     // uploadForm.append('imageUrl', imageFile)
 
@@ -138,7 +139,7 @@ class App extends Component {
                 this.props.history.push('/')
               })      
           })
-      })
+        })
   }
 
   handleEdit = (quote) => {

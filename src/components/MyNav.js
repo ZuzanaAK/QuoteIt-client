@@ -1,26 +1,39 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import '../components/scss/MyNav.scss'
 
 function MyNav(props) {
 
-     let buttonStyle = {marginLeft: '10px'}
-
     return (
 
-        <nav>
-            <Link style={buttonStyle} to="/">Home</Link>
-            <Link style={buttonStyle} to="/add-quote">Add Quote</Link>
-            <Link style={buttonStyle} to="/user-quotes">Profile</Link>
+        <nav class="nav">
+            <ul class="menu-nav">
+                <li class="menu-nav_item">
+                    <Link class="menu-nav_link active" to="/">Home</Link>
+                </li>
+                <li>
+                    <Link class="menu-nav_link" to="/add-quote">Add Quote</Link>
+                </li>
+                <li>
+                    <Link class="menu-nav_link" to="/user-quotes">Profile</Link>
+                </li>
             {
                 props.loggedInUser ? (
-                    <button style={buttonStyle} onClick={props.onLogout}>Logout</button>
+                    <button className="buttonStyle" onClick={props.onLogout}>Logout</button>
                 ) : (
-                    <div>
-                        <Link style={buttonStyle} to="/sign-in">Sign In</Link>
-                        <Link style={buttonStyle} to="/sign-up">Sign Up</Link> 
-                    </div>      
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link class="menu-nav_link" to="/sign-in">Sign In</Link>
+                            </li>
+                            <li>
+                                <Link class="menu-nav_link" to="/sign-up">Sign Up</Link>
+                            </li> 
+                        </ul>
+                    </nav>      
                 )
             }
+            </ul>
         </nav>
     
     )
