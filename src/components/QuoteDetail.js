@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios' 
 import { Link, Redirect } from 'react-router-dom'
+import "../components/scss/main.scss"
 
 class QuoteDetail extends Component {
 

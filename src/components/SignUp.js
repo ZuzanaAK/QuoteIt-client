@@ -1,4 +1,5 @@
 import React from 'react';
+import "../components/scss/main.scss"
 
 export default function SignUp(props){
     return (

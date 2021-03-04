@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios' 
+import "../components/scss/main.scss"
 
 class FriendsApi extends Component {
 
@@ -29,21 +30,12 @@ class FriendsApi extends Component {
         const {quote, character} = this.state.friendsQuote
 
         return (
-            <div>
+            <div className="FriendsQuote">
                 <p>{quote} - {character}</p>
             </div>
         )
     }
 }
-
-
-// function FriendsApi(props) {
-//     return (
-//         <div>
-//           <p>"{props.friendsQ.quote}" - {props.friendsQ.character}</p> 
-//         </div>
-//     )
-// }
 
 
 export default FriendsApi

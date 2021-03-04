@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.scss';
+import "./components/scss/main.scss"
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Switch , Route, withRouter} from 'react-router-dom'
