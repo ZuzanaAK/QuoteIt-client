@@ -13,7 +13,7 @@ function AddQuoteForm(props) {
             <form onSubmit={props.onAdd} >
                 <input name="quote" type="text" placeholder="Enter quote"></input>
                 <input name="author" type="text" placeholder="Enter author"></input>
-                <input name="category" type="text" placeholder="article/book/movie/person/other"></input> 
+                <input name="category" type="text" placeholder="Type details of the quote origin. Is it a book? Article? Movie? A famous person or a member of your family/friends? :)"></input> 
                 <button type="submit">Submit</button>
             </form>
             ) : (

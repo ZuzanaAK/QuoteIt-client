@@ -22,7 +22,8 @@ export default class Profile extends Component {
             quotes: quotes.data,
           })
         })
-  }
+    }
+
   
     render() {
       const { loggedInUser, quotes } = this.props;

@@ -115,31 +115,22 @@ class App extends Component {
   handleAdd = (e) => {
     e.preventDefault()
     const {quote, author, category} = e.target
-    // let imageFile = image.files[0]
+    
+      let newQuote = {
+        quote: quote.value,
+        author: author.value,
+        category: category.value,
+      }
 
-
-    // let uploadForm = new FormData()
-    // uploadForm.append('imageUrl', imageFile)
-
-    axios.post(`${process.env.REACT_APP_API_URL}/upload`, {}, {withCredentials: true})
-      .then((response) => {
-
-          let newQuote = {
-            quote: quote.value,
-            author: author.value,
-            category: category.value,
-            // image: response.data.image
-          }
-      
-          axios.post('http://localhost:5000/api/create', newQuote, {withCredentials: true})
-          .then((response) =>{
-              this.setState({
-                quotes: [ response.data , ...this.state.quotes]
-              }, () => {
-                this.props.history.push('/')
-              })      
-          })
+      axios.post('http://localhost:5000/api/create', newQuote, {withCredentials: true}, {
         })
+      .then((response) =>{
+          this.setState({
+            quotes: [ response.data , ...this.state.quotes]
+          }, () => {
+            this.props.history.push('/user-quotes')
+          })      
+      })     
   }
 
   handleEdit = (quote) => {
@@ -177,7 +168,7 @@ class App extends Component {
           this.setState({
             quotes: filteredQuotes
           }, () => {
-            this.props.history.push('/')
+            this.props.history.push('/user-quotes')
           })
       })
       .catch((err)=> console.log(err))
