@@ -2,12 +2,12 @@
 {
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 30px;
   
   z-index: 1;
   
-  -webkit-user-select: none;
+  $webkit-user-select: none;
   user-select: none;
 }
 
@@ -21,7 +21,7 @@
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: $secondary-color;
 }
 
 
@@ -39,7 +39,7 @@
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
   
-  -webkit-touch-callout: none;
+  $webkit-touch-callout: none;
 }
 
 /*
@@ -112,12 +112,13 @@
 position: absolute;
 width: 200px;
 margin: -80px 0 0 -50px;
-padding: 25px;
-padding-top: 125px;
+padding: 42px;
+padding-top: 110px;
   
-background-color: rgba(237,237,237, 0.7);
+background-color: $menu-color;
 list-style-type: none;
--webkit-font-smoothing: antialiased;
+$webkit-font-smoothing: antialiased;
+
   /* to stop flickering of text in safari */
   
   transform-origin: 0% 0%;
@@ -129,7 +130,7 @@ list-style-type: none;
 #menu li
 {
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /*
