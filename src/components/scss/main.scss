@@ -1,11 +1,17 @@
 @import "config";
 @import "QuoteList";
 @import "MyNav";
+@import "FriendsApi";
+
+
+
 
 body {
-    height: 100vh;
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 2;
+
+   
 }
 
 // h1, h2, h3 {
@@ -16,22 +22,15 @@ body {
     text-decoration: none;
 }
 
-//review this
-.FriendsQuote {
-    z-index: 2;
-    width: 100%;
-    padding: 1rem;
-}
-
-.header {
-    z-index: 2;
-    width: 100%;
-    padding: 1rem;
-}
+// .header {
+//     z-index: 2;
+//     width: 100%;
+//     padding: 1rem;
+// }
 
 .QuoteContainer {
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .QuoteLink {

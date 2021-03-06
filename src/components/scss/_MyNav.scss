@@ -1,3 +1,5 @@
+.MyNav {
+
 #menuToggle
 {
   display: block;
@@ -143,4 +145,12 @@ $webkit-font-smoothing: antialiased;
 
 #SignInAndUp{
     list-style-type: none;
+}
+
+.LogoutButton{
+  border-radius: 5px;
+  padding: 0px 9px 0px 9px;
+  
+}
+
 }

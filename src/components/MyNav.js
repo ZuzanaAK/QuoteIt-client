@@ -5,7 +5,7 @@ import "../components/scss/main.scss"
 function MyNav(props) {
 
     return (
-        <div>
+        <div className="MyNav">
             <nav role="navigation">
                 <div id="menuToggle">
                 
@@ -15,15 +15,15 @@ function MyNav(props) {
                         <span></span>
                         <ul id="menu">
                     
-                        <Link class="menu-nav_link active" to="/"><li>Home</li></Link>
+                        <Link className="menu-nav_link active" to="/"><li>Home</li></Link>
                    
-                        <Link class="menu-nav_link" to="/add-quote"><li>Add Quote</li></Link>
+                        <Link className="menu-nav_link" to="/add-quote"><li>Add Quote</li></Link>
                
-                        <Link class="menu-nav_link" to="/user-quotes"><li>Profile</li></Link>
+                        <Link className="menu-nav_link" to="/user-quotes"><li>Profile</li></Link>
                   
                     {
                         props.loggedInUser ? (
-                            <button className="buttonStyle" onClick={props.onLogout}><li>Logout</li></button>
+                            <button className="LogoutButton" onClick={props.onLogout}><li>Logout</li></button>
                         ) : (
                             <nav>
                                 <ul >

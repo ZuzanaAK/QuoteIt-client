@@ -30,9 +30,11 @@ class FriendsApi extends Component {
         const {quote, character} = this.state.friendsQuote
 
         return (
-            <div className="FriendsQuote">
-                <p>{quote} - {character}</p>
-            </div>
+        <div className="FriendApi">
+                <div className="FriendsQuote">
+                    <p>"{quote}" - {character}</p>
+                </div>
+        </div>
         )
     }
 }
