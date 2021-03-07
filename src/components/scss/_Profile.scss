@@ -1,4 +1,13 @@
-h2 {
-    color: orchid;
+.Profile {
+
+    h2 {
+        color: orchid;
+        @include flex-box-centre;
+        
+    }
+
+
 }
+
+
 

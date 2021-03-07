@@ -38,7 +38,7 @@ export default class Profile extends Component {
       }
   
       return (
-        <div>
+        <div className="Profile">
             <h2>Welcome {loggedInUser.username} </h2>
             <div>
             These are your quotes:

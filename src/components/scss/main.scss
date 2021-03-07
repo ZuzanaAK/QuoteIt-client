@@ -2,12 +2,13 @@
 @import "QuoteList";
 @import "MyNav";
 @import "FriendsApi";
-
-
+@import "AddQuoteForm";
+@import "Profile";
 
 
 body {
     
+    height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 2;
 
@@ -28,19 +29,9 @@ body {
 //     padding: 1rem;
 // }
 
-.QuoteContainer {
-    height: 100%;
-    width: 100%;
-}
+// .QuoteContainer {
+//     height: 100%;
+//     width: 100%;
+// }
 
-.QuoteLink {
-    padding: 0.4rem;
-    color: $primary-color;
-    text-decoration: none;
-    @include transition-ease;
-  
-    &:hover {
-        color: $secondary-color;
-    }
-    
-}
+

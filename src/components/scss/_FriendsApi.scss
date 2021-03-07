@@ -1,17 +1,15 @@
 .FriendApi {
 
-
     margin-top: 50px;
     z-index: 2;
     @include flex-box-centre;
     padding: 1rem;
-    //background-color: aliceblue
-
-
-.FriendsHeader{
     
-    @include flex-box-centre;
-    width: 100%;
-    //background-color: orange;
+
+
+.FriendsQuote{
+    
+    margin-left: 20px;
+
 }
 }

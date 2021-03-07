@@ -6,6 +6,7 @@ function MyNav(props) {
 
     return (
         <div className="MyNav">
+         
             <nav role="navigation">
                 <div id="menuToggle">
                 
@@ -27,8 +28,8 @@ function MyNav(props) {
                         ) : (
                             <nav>
                                 <ul >
-                                    <Link id="SignInAndUp" class="menu-nav_link" to="/sign-in"><li>Sign In</li></Link>
-                                    <Link id="SignInAndUp" class="menu-nav_link" to="/sign-up"><li>Sign Up</li></Link>
+                                    <Link id="SignInAndUp" className="menu-nav_link" to="/sign-in"><li>Sign In</li></Link>
+                                    <Link id="SignInAndUp" className="menu-nav_link" to="/sign-up"><li>Sign Up</li></Link>
                                 </ul>
                             </nav>      
                         )

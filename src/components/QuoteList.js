@@ -4,15 +4,15 @@ import "../components/scss/main.scss";
 
 class QuoteList extends React.Component {
 
-  divContainer = ["parallax-wrapper", "regular-wrapper"]
+  divContainer = ["intro", "content"]
 
   backgroundColor = [
-    "#DAF7A6",
-    "#FFC300",
-    "#FF5733",
-    "#C70039",
-    "#900C3F",
-    "#581845",
+    "#F94144",
+    "#F3722C",
+    "#F8961E",
+    "#90BE6D",
+    "#43AA8B",
+    "#577590",
   ];
 
   render() {
@@ -21,22 +21,22 @@ class QuoteList extends React.Component {
         {this.props.quotes.map((quote, index) => {
   
           let colorIndex = index % this.backgroundColor.length;
-          let divIndex = index % this.divContainer.length === 0 ? 0 : 1;
-          
+          //let divIndex = index % this.divContainer.length === 0 ? 0 : 1;
+
           return (
-            <div
-              className={this.divContainer[divIndex]}
+            <div key={quote._id}
+            //   className={this.divContainer[divIndex]}
               style={{
                 backgroundColor: `${this.backgroundColor[colorIndex]}`,
               }}
             >
               <Link
-                key={quote._id}
+                
                 className="QuoteLink"
                 to={`/quote/${quote._id}`}
               >
-                <div className="content">
-                  <p key={quote._id}>"{quote.quote}"</p>
+                <div className="Card">
+                  <p class="img-responsive rounded" key={quote._id}>"{quote.quote}"</p>
                 </div>
               </Link>
             </div>
