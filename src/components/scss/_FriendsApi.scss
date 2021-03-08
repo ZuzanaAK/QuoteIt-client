@@ -1,8 +1,10 @@
 .FriendApi {
 
-    margin: 50px 20px 10px 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     //z-index: 2;
     @include flex-box-centre;
+    width: 100%;
     padding: 10px;
     
 }
@@ -11,5 +13,4 @@
     @include flex-box-centre;
     width: 100%;
     margin: 10px;
-
 }

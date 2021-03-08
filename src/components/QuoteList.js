@@ -24,7 +24,7 @@ class QuoteList extends React.Component {
           //let divIndex = index % this.divContainer.length === 0 ? 0 : 1;
 
           return (
-            <div className="BackgroundImg">
+           
             <div key={quote._id}
             className="QuoteContainer"
             //   className={this.divContainer[divIndex]}
@@ -36,12 +36,10 @@ class QuoteList extends React.Component {
                 className="QuoteLink"
                 to={`/quote/${quote._id}`}
               >
-                <div className="Card">
                   <p key={quote._id}>{quote.quote}</p>
-                </div>
               </Link>
             </div>
-            </div>
+           
           );
         })}
       </div>

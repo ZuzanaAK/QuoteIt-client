@@ -6,14 +6,17 @@
 
     .FormContainer {
         
-        margin-top: 50px;
+        margin-top: 40px;
 
         h4 {
             color: white;
+            padding: 5px;
         }
 
         .FormField {
             display: flex;
+            width: auto;
+            margin-bottom: 15px;
            // border-radius: 6px;
         }
 
