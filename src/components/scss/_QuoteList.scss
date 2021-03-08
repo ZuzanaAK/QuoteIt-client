@@ -1,28 +1,45 @@
 
 .QuoteList {
 
-   .Card {
-    @include flex-box-centre;
-    width: 300px;
-    height: 300px;
+    // body, html {
+    //     height: 100%;
+    //   }
 
-    p {
-        margin: 20px;
-        color: white;
-        font-size: 20px;
-    }
-}
+   // height: 100%; 
 
-.QuoteLink {
-    text-decoration: none;
-    @include flex-box-centre;
+   background-image: url(../img/pexels-daria-shevtsova-3793316.jpg);
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
 }
 
 .QuoteContainer {
     @include flex-box-centre;
-    flex-direction: column;
+    
+    margin: 50px;
+   
+
+    .QuoteLink {
+        text-decoration: none;
+        flex-direction: column;
+        //@include flex-box-centre;
+
+        .Card {
+            @include flex-box-centre;
+            width: 300px;
+            height: 300px;
+            
+        
+            p {
+                margin: 20px;
+                color: white;
+                font-size: 20px;
+                
+            }
+    
+    }
+
 }
-
-      
-
 }

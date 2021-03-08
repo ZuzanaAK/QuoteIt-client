@@ -1,15 +1,15 @@
 .FriendApi {
 
-    margin-top: 50px;
-    z-index: 2;
+    margin: 50px 20px 10px 10px;
+    //z-index: 2;
     @include flex-box-centre;
-    padding: 1rem;
+    padding: 10px;
     
-
+}
 
 .FriendsQuote{
-    
-    margin-left: 20px;
+    @include flex-box-centre;
+    width: 100%;
+    margin: 10px;
 
-}
 }

@@ -4,7 +4,7 @@ import "../components/scss/main.scss";
 
 class QuoteList extends React.Component {
 
-  divContainer = ["intro", "content"]
+  // divContainer = ["intro", "content"]
 
   backgroundColor = [
     "#F94144",
@@ -24,21 +24,23 @@ class QuoteList extends React.Component {
           //let divIndex = index % this.divContainer.length === 0 ? 0 : 1;
 
           return (
+            <div className="BackgroundImg">
             <div key={quote._id}
+            className="QuoteContainer"
             //   className={this.divContainer[divIndex]}
               style={{
                 backgroundColor: `${this.backgroundColor[colorIndex]}`,
               }}
             >
               <Link
-                
                 className="QuoteLink"
                 to={`/quote/${quote._id}`}
               >
                 <div className="Card">
-                  <p class="img-responsive rounded" key={quote._id}>"{quote.quote}"</p>
+                  <p key={quote._id}>"{quote.quote}"</p>
                 </div>
               </Link>
+            </div>
             </div>
           );
         })}

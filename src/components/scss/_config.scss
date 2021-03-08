@@ -4,7 +4,6 @@ $menu-color: rgba(237,237,237, 0.7);
 
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0
 }
@@ -17,4 +16,15 @@ $menu-color: rgba(237,237,237, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin submit-button {
+    border-radius: 5px;
+    padding: 15px 22px 15px 22px;
+    margin-top: 22px;
+    background-color: #F94144;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 50px;
+    font-size: 17px;
+    color: white;
 }

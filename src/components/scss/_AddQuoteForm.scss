@@ -1,5 +1,5 @@
 .AddQuoteForm {
-    background-color: #577590;
+    background-image:url("../img/pexels-daria-shevtsova-3793316.jpg");
     height: 100%;
     width: 100%;
     @include flex-box-centre; 
@@ -26,16 +26,12 @@
           }
 
         .SubmitButton {
-            border-radius: 5px;
-            padding: 15px 25px 15px 25px;
-            margin-top: 22px;
-            background-color: #F9C74F;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-bottom: 50px;
+            @include submit-button;
 
             p{
                 @include transition-ease; 
-                color:  rgb(63, 61, 61);
+                color: white;
+                //color:  rgb(63, 61, 61);
             }
             
         }

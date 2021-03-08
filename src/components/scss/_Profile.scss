@@ -1,11 +1,22 @@
 .Profile {
 
+    background-image: url(../img/pexels-daria-shevtsova-3793316.jpg);
+
     h2 {
-        color: orchid;
+        color: #F94144;
+        margin: 20px;
         @include flex-box-centre;
         
     }
 
+    .SubmitButton {
+        @include submit-button;
+        margin-left: 15px;
+    }
+
+    .QuoteDetailContainer {
+        background-color: "#43AA8B";
+    }
 
 }
 

@@ -39,12 +39,13 @@ export default class Profile extends Component {
   
       return (
         <div className="Profile">
-            <h2>Welcome {loggedInUser.username} </h2>
+            <h2>Welcome To Your Profile {loggedInUser.username} </h2>
+            <Link to="/add-quote"><button className="SubmitButton">Add Quote</button></Link>
             <div>
             These are your quotes:
               {this.state.quotes.map((elem, i) => {
                 return (
-                  <div key={i}>
+                  <div className="QuoteDetailContainer" key={i}>
                        <p>quote: {elem.quote}</p>
                        <p>author: {elem.author}</p>
                        <p>category: {elem.category}</p>
