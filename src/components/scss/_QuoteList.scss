@@ -10,30 +10,28 @@
   
    :hover {
     border-radius: 50%;
-
    }
 }
 
 .QuoteContainer {
     @include flex-box-centre;
     margin: 40px 25px 20px 25px;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
 
     .QuoteLink {
         text-decoration: none;
         flex-direction: column;
-        //background-color: aliceblue;
-        
-        //@include flex-box-centre;   
         @include flex-box-centre;
         width: 350px;
         height: 350px;
+        
         
             p {
                 margin: 15px;
                 color: white;
                 font-size: 20px;
                 padding: 25px;
+                
             }
     
         

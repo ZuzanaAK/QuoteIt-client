@@ -41,8 +41,10 @@ export default class Profile extends Component {
   
       return (
         <div className="Profile">
+            
             <h3>Welcome To Your Profile {loggedInUser.username} </h3>
             <Link to="/add-quote"><button className="SubmitButton">ADD QUOTE</button></Link>
+            
             <div>
               {this.state.quotes.map((elem, i) => {
                 return (
