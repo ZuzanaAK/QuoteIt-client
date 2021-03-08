@@ -3,21 +3,22 @@ import "../components/scss/main.scss"
 
 export default function SignUp(props){
     return (
-        <form onSubmit={props.onSignUp}>
-            <div>
-                <label>Username</label>
-                <input type="text" name="username" />
-            </div>
-            <div>
-                <label>Email address</label>
-                <input type="email" name="email" />
-                <small>We'll never share your email with anyone else.</small>
-            </div>
-            <div>
-                <label >Password</label>
-                <input name="password" type="password"/>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+        <div className="SignUpComponent">
+            <form onSubmit={props.onSignUp}>
+                <div className="SignUpCompContainer">
+                    <label><h4>USERNAME</h4></label>
+                    <input type="text" name="username" />
+         
+                    <label><h4>EMAIL ADDRESS</h4></label>
+                    <input type="email" name="email" />
+                    <small>We'll never share your email with anyone else.</small>
+  
+                    <label ><h4>PASSWORD</h4></label>
+                    <input name="password" type="password"/>
+                
+                    <button className="SubmitButton" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     )
 }

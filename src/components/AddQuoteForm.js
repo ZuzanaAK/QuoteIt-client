@@ -17,10 +17,10 @@ class AddQuoteForm extends React.Component {
             <button className="SubmitButton" type="submit"><p>SUBMIT</p></button>
           </form>
         ) : (
-          <div>
-            <p>You need to sign in first to add a quote!</p>
-            <Link to="/sign-in">Sign In</Link>
-            <Link to="/sign-up">Sign Up</Link>
+          <div className="SignInMessage">
+            <h5>Please sign in first to add a quote.</h5>
+            <Link className="Link" to="/sign-in">Sign In</Link>
+            <Link className="Link" to="/sign-up">Sign Up</Link>
           </div>
         )}
       </div>

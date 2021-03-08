@@ -38,3 +38,28 @@ $menu-color: rgba(237,237,237, 0.7);
     //border-radius: 5px;
     padding: 20px;
 }
+
+@mixin NowOrNeverImg {
+    background-image: url(../img/pexels-daria-shevtsova-3793316.jpg); 
+}
+
+@mixin SignInFirst {
+
+        width: 100vw;
+        height: 100vh;
+        margin: 25px;
+        background-color: white;
+       
+    
+         h5 {
+            margin: 30px;
+    
+        }
+    
+        .Link {
+            @include submit-button;
+            text-decoration: none;
+            color: white;
+            margin-left: 30px;
+        }
+}

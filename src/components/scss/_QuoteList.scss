@@ -5,18 +5,19 @@
    width: 100%;
    //flex-direction: column;
    flex-wrap: wrap;
-   background-image: url(../img/pexels-daria-shevtsova-3793316.jpg);
+   @include NowOrNeverImg;
    background-attachment: fixed;
-
+  
    :hover {
     border-radius: 50%;
+
    }
 }
 
 .QuoteContainer {
     @include flex-box-centre;
     margin: 40px 25px 20px 25px;
-
+    transition: all 0.5s ease;
 
     .QuoteLink {
         text-decoration: none;

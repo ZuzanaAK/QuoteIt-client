@@ -28,21 +28,22 @@ class QuoteDetail extends Component {
         const {loggedInUser} = this.props
 
         return (
-            <div>
-                <div>Quote: {quote}</div>
-                <div>Author: {author}</div>
-                <div>Category: {category}</div>
-                {/* <img src={image} alt={quote}/> */}
-                {/* {
-                    loggedInUser ? (
-                    <div>
-                        <Link to={`/quote/${_id}/edit`} ><button>Edit</button></Link>
-                        <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
-                    </div>) : (
-                    null
-                    )
-                } */}
-                
+            <div className="QuoteDetail">
+                <div className="DetailContainer">
+                    <h4>QUOTE</h4><p>{quote}</p>
+                    <h4>AUTHOR</h4><p> {author}</p>
+                    <h4>DETAILS</h4><p> {category}</p>
+                    {/* <img src={image} alt={quote}/> */}
+                    {/* {
+                        loggedInUser ? (
+                        <div>
+                            <Link to={`/quote/${_id}/edit`} ><button>Edit</button></Link>
+                            <button onClick={() => { this.props.onDelete(_id) } }>Delete</button>
+                        </div>) : (
+                        null
+                        )
+                    } */}
+                </div>
             </div>
         )
     }

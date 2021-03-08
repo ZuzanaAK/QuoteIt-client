@@ -30,16 +30,18 @@ export default class Profile extends Component {
   
       if (!loggedInUser) {
         return (
-        <div>
-          <p>Please, sign in first</p>  
-          <Link to="/sign-in">Sign In</Link>
-          <Link to="/sign-up">Sign Up</Link> 
+        <div className="SignInContainer">
+          <div className="SignInMessage">
+            <h5>Please, sign in first</h5>  
+            <Link className="Link" to="/sign-in">Sign In</Link>
+            <Link className="Link" to="/sign-up">Sign Up</Link> 
+          </div>
         </div> );
       }
   
       return (
         <div className="Profile">
-            <h2>Welcome To Your Profile {loggedInUser.username} </h2>
+            <h3>Welcome To Your Profile {loggedInUser.username} </h3>
             <Link to="/add-quote"><button className="SubmitButton">ADD QUOTE</button></Link>
             <div>
               {this.state.quotes.map((elem, i) => {

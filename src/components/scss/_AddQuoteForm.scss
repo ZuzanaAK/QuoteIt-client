@@ -1,7 +1,6 @@
 .AddQuoteForm {
-    background-image:url("../img/pexels-daria-shevtsova-3793316.jpg");
-    height: 100%;
-    width: 100%;
+    @include NowOrNeverImg;
+
     @include flex-box-centre; 
 
     .FormContainer {
@@ -33,7 +32,7 @@
              
           }
 
-        .SubmitButton {
+          .SubmitButton {
             @include submit-button;
             margin-bottom: 50px;
 
@@ -42,10 +41,13 @@
                 color: white;
                 //color:  rgb(63, 61, 61);
             }
-            
+
         }
 
+    }
 
+    .SignInMessage {
+        @include SignInFirst;
     }
 }
 

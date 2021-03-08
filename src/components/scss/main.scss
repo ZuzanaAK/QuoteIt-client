@@ -5,7 +5,9 @@
 @import "AddQuoteForm";
 @import "Profile";
 @import "EditForm";
-
+@import "QuoteDetail";
+@import "SignIn";
+@import "SignUp";
 
 body {
     
@@ -23,5 +25,6 @@ body {
 .menu-nav_link {
     text-decoration: none;
 }
+
 
 

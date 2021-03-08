@@ -1,5 +1,5 @@
 .EditForm {
-    background-image: url(../img/pexels-daria-shevtsova-3793316.jpg);
+    @include NowOrNeverImg;
     width: 100%;
     height: 100%;
     @include flex-box-centre;
@@ -23,7 +23,7 @@
 
         .SubmitButton {
             @include submit-button;
-            color: white
+            
         }
 
     }

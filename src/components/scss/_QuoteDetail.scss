@@ -1,0 +1,15 @@
+.QuoteDetail {
+    display: flex;
+    justify-content: center;
+    @include NowOrNeverImg;
+    height: 100vh;
+
+    .DetailContainer {
+        margin: 25px;
+        background-color: white;
+
+        h4, p {
+            margin: 25px;
+        }
+    }
+}

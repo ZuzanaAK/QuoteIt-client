@@ -1,0 +1,29 @@
+.SignInComponent {
+    @include NowOrNeverImg;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+
+    .SignInCompContainer {
+    
+        margin: 40px;
+        display: flex;
+        width: auto;
+        flex-direction: column;
+       
+
+        
+        .SubmitButton {
+            @include submit-button;
+            
+        }
+
+        h4 {
+            color: white;
+            padding: 20px;
+        }
+ 
+    }
+}
