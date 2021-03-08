@@ -8,25 +8,31 @@
         
         margin-top: 50px;
 
-        p {
+        h4 {
             color: white;
         }
 
         .FormField {
             display: flex;
-            border-radius: 6px;
-
-           
+           // border-radius: 6px;
         }
 
         ::placeholder { 
             color: rgb(124, 119, 119);
-            padding: 20px;
+            padding: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
             
+          }
+          textarea[type=text] {
+           
+            padding: 20px;
+             
           }
 
         .SubmitButton {
             @include submit-button;
+            margin-bottom: 50px;
 
             p{
                 @include transition-ease; 
@@ -35,6 +41,8 @@
             }
             
         }
+
+
     }
 }
 

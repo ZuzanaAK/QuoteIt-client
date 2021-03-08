@@ -1,9 +1,14 @@
 .Profile {
 
     background-image: url(../img/pexels-daria-shevtsova-3793316.jpg);
+    //background-position: fixed;
+    @include flex-box-centre;
+    flex-direction: column;
+
+
 
     h2 {
-        color: #F94144;
+        color: white;
         margin: 20px;
         @include flex-box-centre;
         
@@ -11,11 +16,33 @@
 
     .SubmitButton {
         @include submit-button;
-        margin-left: 15px;
+        color: white;
+        margin-left: 25px;
     }
 
     .QuoteDetailContainer {
-        background-color: "#43AA8B";
+        @include quote-container;
+        background-image:url(../img/pexels-steve-johnson-1843717.jpg);
+   
+    }
+
+    .EditDeleteButton {
+        border-radius: 5px;
+        padding: 8px 18px 8px 18px;
+        margin-right: 10px;
+        margin-top: 22px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 17px;
+
+        background-color: white;
+        color: #F94144;
+        font-weight: 600;
+        border-style: hidden;
+    }
+
+    .SpanDetails {
+        font-weight: 600;
+        margin: 10px;
     }
 
 }

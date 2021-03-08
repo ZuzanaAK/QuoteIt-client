@@ -23,8 +23,18 @@ $menu-color: rgba(237,237,237, 0.7);
     padding: 15px 22px 15px 22px;
     margin-top: 22px;
     background-color: #F94144;
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 50px;
     font-size: 17px;
-    color: white;
+    
+    border-style: hidden;
+}
+
+@mixin quote-container {
+    margin: 25px;
+    //background-image:url(../img/pexels-steve-johnson-1843717.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    //border-radius: 5px;
+    padding: 20px;
 }

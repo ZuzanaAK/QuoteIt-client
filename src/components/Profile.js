@@ -40,17 +40,16 @@ export default class Profile extends Component {
       return (
         <div className="Profile">
             <h2>Welcome To Your Profile {loggedInUser.username} </h2>
-            <Link to="/add-quote"><button className="SubmitButton">Add Quote</button></Link>
+            <Link to="/add-quote"><button className="SubmitButton">ADD QUOTE</button></Link>
             <div>
-            These are your quotes:
               {this.state.quotes.map((elem, i) => {
                 return (
                   <div className="QuoteDetailContainer" key={i}>
-                       <p>quote: {elem.quote}</p>
-                       <p>author: {elem.author}</p>
-                       <p>category: {elem.category}</p>
-                       <Link to={`/quote/${elem._id}/edit`} ><button>Edit</button></Link>
-                        <button onClick={() => { this.props.onDelete(elem._id) } }>Delete</button>
+                       <p>{elem.quote}</p>
+                       <p><span className="SpanDetails">author:</span> {elem.author}</p>
+                       <p><span className="SpanDetails">details:</span> {elem.category}</p>
+                       <Link to={`/quote/${elem._id}/edit`} ><button className="EditDeleteButton">EDIT</button></Link>
+                        <button className="EditDeleteButton" onClick={() => { this.props.onDelete(elem._id) } }>DELETE</button>
                   </div>
                 )
               })}

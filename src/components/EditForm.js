@@ -48,19 +48,20 @@ class EditForm extends Component {
         // const {quote, author, category} = this.state.quote
 
         return (
-            <div>
-            
-                <p>quote</p>
-                    <input onChange={this.handleQuoteChange} type="text" value={this.state.quote.quote}></input>
+            <div className="EditForm">
+
+                <div className="EditContainer">           
+                    <h4>YOUR QUOTE</h4>
+                    <textarea onChange={this.handleQuoteChange} rows="10" cols="45" type="text" value={this.state.quote.quote}></textarea>
                     <br/>
-                <p>author</p>
-                    <input onChange={this.handleAuthorChange} type="text" value={this.state.quote.author} ></input>
+                    <h4>AUTHOR</h4>
+                    <textarea onChange={this.handleAuthorChange} rows="5" cols="45" type="text" value={this.state.quote.author} ></textarea>
                     <br/>
-                <p>category</p>
-                    <input onChange={this.handleCategoryChange} type="text" placeholder="article, book, movie, person, other" value={this.state.quote.category} ></input>
+                    <h4>DETAILS/THOUGHTS</h4>
+                    <textarea onChange={this.handleCategoryChange} rows="15" cols="45" type="text" placeholder="Type details of the quote origin. Is it a quote from a book? An article? A Movie? A famous person or a member of your family/friends? - you can write more about them here :)" value={this.state.quote.category} ></textarea>
                     <br/>
-                    <button onClick={() => { this.props.onEdit(this.state.quote) }}>Submit Changes</button>
-            
+                    <button className="SubmitButton" onClick={() => { this.props.onEdit(this.state.quote) }}>SUBMIT CHANGES</button>
+                </div> 
             </div>
         )
     }

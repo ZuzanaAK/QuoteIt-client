@@ -37,7 +37,7 @@ class QuoteList extends React.Component {
                 to={`/quote/${quote._id}`}
               >
                 <div className="Card">
-                  <p key={quote._id}>"{quote.quote}"</p>
+                  <p key={quote._id}>{quote.quote}</p>
                 </div>
               </Link>
             </div>
