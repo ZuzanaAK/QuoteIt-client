@@ -1,12 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import "../components/scss/main.scss"
+import logo from "./bitmap3.png"
 
 function MyNav(props) {
 
     return (
         <div className="MyNav">
-         
             <nav role="navigation">
                 <div id="menuToggle">
                 
@@ -36,7 +36,11 @@ function MyNav(props) {
                     }
                     </ul>
                 </div>
+                
             </nav>
+            <div className="ImgContainer">
+                <img className="ImgLogo" src={logo} height="20" width="130"/>
+            </div>
         </div>
     )
 }
