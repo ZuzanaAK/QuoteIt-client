@@ -6,12 +6,18 @@
     
 
     .EditContainer {
+        @include flex-box-centre;
+        flex-direction: column;
         @include quote-container;
         margin-top: 20px;
         
         h4 {
-            color: white;
-            font-weight: 600;
+            color: #90BE6D;
+            font-weight: 700;
+            text-shadow: -1px 1px 0 #000;
+            text-shadow: 1px 1px 0 #000;
+            text-shadow: 1px -1px 0 #000;
+            text-shadow: -1px -1px 0 #000;
         }
       
         textarea[type=text] {
@@ -23,6 +29,7 @@
 
         .SubmitButton {
             @include submit-button;
+            color: white;
             
         }
 

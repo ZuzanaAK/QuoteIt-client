@@ -6,10 +6,18 @@
 
     .DetailContainer {
         margin: 25px;
-        background-color: white;
+        background-color: #90BE6D;
 
         h4, p {
             margin: 25px;
+        }
+
+        h4 {
+            color: white;
+            text-shadow: -1px 1px 0 #000;
+            text-shadow: 1px 1px 0 #000;
+            text-shadow: 1px -1px 0 #000;
+            text-shadow: -1px -1px 0 #000;
         }
     }
 }

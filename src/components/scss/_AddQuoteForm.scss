@@ -4,18 +4,25 @@
     @include flex-box-centre; 
 
     .FormContainer {
-        
+        @include flex-box-centre;
+        flex-direction: column;
         margin-top: 40px;
 
         h4 {
-            color: white;
+            color: #90BE6D;
             padding: 5px;
+            border: white;
+            text-shadow: -1px 1px 0 #000;
+            text-shadow: 1px 1px 0 #000;
+            text-shadow: 1px -1px 0 #000;
+            text-shadow: -1px -1px 0 #000;
         }
 
         .FormField {
             display: flex;
-            width: auto;
+            width: 80%;
             margin-bottom: 15px;
+            font-size: 15px;
            // border-radius: 6px;
         }
 
@@ -32,8 +39,11 @@
              
           }
 
+
+          
           .SubmitButton {
             @include submit-button;
+            
             margin-bottom: 50px;
 
             p{

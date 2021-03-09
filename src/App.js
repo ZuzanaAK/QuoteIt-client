@@ -151,7 +151,7 @@ class App extends Component {
         this.setState({
           quotes: updatedQuotes
         }, () => {
-          this.props.history.push('/')
+          this.props.history.push('/user-quotes')
         })
     })
   }
