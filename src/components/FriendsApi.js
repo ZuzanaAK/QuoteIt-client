@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios' 
 import "../components/scss/main.scss"
+import { Spinner } from "react-bootstrap";
 
 class FriendsApi extends Component {
 
 
     state ={
         friendsQuote: {},
+        showQuotes: false,
     }
 
     componentDidMount() {
@@ -27,14 +29,18 @@ class FriendsApi extends Component {
 
     render() {
 
-        const {quote, character} = this.state.friendsQuote
+        const {quote, character, showQuotes} = this.state.friendsQuote
+
+        // if (showQuotes) {
+        //   return <Spinner animation="grow" variant="danger" style= {{marginLeft: "50px"}}/>
+        // }
 
         return (
-        <div className="FriendApi">
-                <div className="FriendsQuote">
-                    <p>"{quote}"<br/> - {character} <span>#FriendsForever</span></p>
-                </div>
-        </div>
+            <div className="FriendApi">
+                    <div className="FriendsQuote">
+                        <p>"{quote}"<br/> - {character} <span>#FriendsForever</span></p>
+                    </div>
+            </div>
         )
     }
 }

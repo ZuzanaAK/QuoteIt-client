@@ -184,8 +184,9 @@ class App extends Component {
     return(
       <div>
         <MyNav loggedInUser={loggedInUser} onLogout={this.handleLogOut} />
-        <FriendsApi />
-
+        <div className="FriendsApiContainer">
+          <FriendsApi />
+        </div>
         <Switch>
           <Route path="/sign-in" render={(routeProps) => {
             return <SignIn onSignIn={this.handleSignIn} {...routeProps} />

@@ -9,7 +9,7 @@ function MyNav(props) {
         <div className="MyNav">
             <nav role="navigation">
                 <div id="menuToggle">
-                
+
                         <input type="checkbox" />
                         <span></span>
                         <span></span>
@@ -39,7 +39,7 @@ function MyNav(props) {
                 
             </nav>
             <div className="ImgContainer">
-                <img className="ImgLogo" src={logo} height="20" width="130"/>
+                <img className="ImgLogo" src={logo}/>
             </div>
         </div>
     )

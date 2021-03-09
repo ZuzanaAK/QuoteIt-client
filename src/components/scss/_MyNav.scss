@@ -4,6 +4,12 @@
       display: flex;
       justify-content: flex-end;
       width: 90%;
+
+      .ImgLogo {
+        height: 20px;
+        width: 130px;
+      }
+
     }
 
     #menuToggle
@@ -158,5 +164,27 @@
       padding: 0px 9px 0px 9px;
       
     }
+
+
+    @include media-pc {
+
+      .ImgContainer {
+        display: flex;
+        justify-content: flex-end;
+        width: 95%;
+  
+        .ImgLogo {
+          height: 30px;
+          width: 190px;
+        }  
+          
+      }
+
+
+
+    }
+
+
+
 
 }

@@ -9,12 +9,13 @@
 @import "SignIn";
 @import "SignUp";
 
+
 body {
     
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    
+    //@include flex-box-centre
    
 }
 
@@ -27,4 +28,7 @@ body {
 }
 
 
-
+.FriendsApiContainer {
+    @include flex-box-centre;
+    width: 100%;
+}
