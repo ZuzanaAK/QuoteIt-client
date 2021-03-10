@@ -16,6 +16,9 @@ In the server-side: Express.js, MongoDB, Nodemailer
 Use `npm start` to run the client-side.
 Use `npm run start`to run the server-side. 
 
+## Deployed Link To View The App
+
+https://quote-it.netlify.app
 
 
 
