@@ -46,7 +46,7 @@ export default class Profile extends Component {
 
             <Link className="ProfileLink" to="/add-quote"><button className="SubmitButton">ADD QUOTE</button></Link>
             
-            <div>
+            <div className="Container">
               {this.state.quotes.map((elem, i) => {
                 return (
                   <div className="QuoteDetailContainer" key={i}>

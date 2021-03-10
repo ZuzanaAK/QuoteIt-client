@@ -122,7 +122,7 @@ class App extends Component {
         category: category.value,
       }
 
-      axios.post('http://localhost:5000/api/create', newQuote, {withCredentials: true}, {
+      axios.post(`${process.env.REACT_APP_API_URL}/create`, newQuote, {withCredentials: true}, {
         })
       .then((response) =>{
           this.setState({
