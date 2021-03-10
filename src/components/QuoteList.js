@@ -17,7 +17,8 @@ class QuoteList extends React.Component {
 
   render() {
     return (
-      <div className="QuoteList">
+      <div className="QuoteList wrapper">
+          
         {this.props.quotes.map((quote, index) => {
   
           let colorIndex = index % this.backgroundColor.length;

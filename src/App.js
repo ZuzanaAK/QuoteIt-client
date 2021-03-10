@@ -33,7 +33,7 @@ class App extends Component {
         })
     }
 
-    axios.get(`${process.env.REACT_APP_API_URL}/quotes`)
+    axios.get(`${process.env.REACT_APP_API_URL}/quotes`, {withCredentials:true})
     .then((response) => {
        console.log(response.data) 
       this.setState({
