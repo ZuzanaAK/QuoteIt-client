@@ -30,16 +30,19 @@ export default class Profile extends Component {
   
       if (!loggedInUser) {
         return (
-        <div className="SignInContainer">
-          <div className="SignInMessage">
-            <p>To view your profile, you need to sign in first</p>  
-            <Link className="Link" to="/sign-in">Sign In</Link>
-            <br/>
-            <p>If you don't have an account yet, please sign up.</p>
-            <br/>
-            <Link className="Link" to="/sign-up">Sign Up</Link> 
-          </div>
-        </div> );
+            <div className="SignInContainer">
+
+              <div className="SignInMessage">
+                <p>To view your profile, you need to sign in first</p>  
+                <Link className="Link" to="/sign-in">Sign In</Link>
+                <br/>
+                <p>If you don't have an account yet, please sign up.</p>
+                <br/>
+                <Link className="Link" to="/sign-up">Sign Up</Link> 
+              </div>
+              
+            </div> 
+          )
       }
   
       return (
