@@ -38,7 +38,7 @@ class FriendsApi extends Component {
         return (
             <div className="FriendApi">
                     <div className="FriendsQuote">
-                        <p>"{quote}"<br/> - {character} <span>#FriendsForever</span></p>
+                        <p><span >"{quote}"<br/> - {character}</span> <span className="BoldQuote">#FriendsForever</span></p>
                     </div>
             </div>
         )
