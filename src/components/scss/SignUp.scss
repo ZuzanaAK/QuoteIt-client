@@ -9,11 +9,22 @@
     @include SignInAndSignUp;
 
     .SignInForm {
-        height: min(75%);
+        height: min(90%);
+
+        @include media-pc {
+            width: 45%
+        }
+
+        // @include media-tablet() {
+        //   //width: 60%;
+        //     small {
+        //       padding: 20px;
+        //     }   
+        // }
 
         small {
             color: honeydew;
-            padding-top: 5px;
+            margin: 20px;
         }
     }
 }

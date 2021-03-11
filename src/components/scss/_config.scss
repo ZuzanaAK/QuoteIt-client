@@ -7,6 +7,28 @@ $menu-color: rgba(237,237,237, 0.7);
     padding: 0
 }
 
+/*............media queries...........*/
+
+@mixin media-medium-phone {
+  @media screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+    @media screen and (min-width: 480px) {
+      @content;
+    }
+  }
+
+  @mixin media-pc {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+
+/*............................................*/
+
 @mixin transition-ease {
     transition: all 0.7s ease-in-out;
 }
@@ -69,67 +91,45 @@ $menu-color: rgba(237,237,237, 0.7);
 @mixin SignInAndSignUp {
 
     .SignInForm {
-      // display: flex;
-      // justify-content: center;
-      
-      background-color: #43AA8B;
-      @include flex-box-centre;
-      margin-top: 50px;
-      margin-left: 20%;
-      margin-right: 20%;
-      //display: flex;
-      width: 80%;
-      flex-direction: column;
-      border-radius: 5px;
+        // display: flex;
+        // justify-content: center;
+        background-color: #43AA8B;
+        @include flex-box-centre;
+        margin-top: 50px;
+        margin-left: 10%;
+        margin-right: 10%;
+        //display: flex;
+        //width: 100%;
+        flex-direction: column;
+        border-radius: 5px;
 
-      @include media-pc {
-          width: 40%
-      }
-
-              input {
-                // width: 100%;
-                  padding-top: 10px ;
-                  padding-bottom: 10px ;
-                  padding-left: min(3%);
-                  padding-right: min(3%);
-                  min-width: 60%;
-                  max-width: 40%;
-                  border-radius: 5px;
-                  border-color: rgb(235, 232, 232);
-                  margin-left: min(10%);
-                  margin-right: min(10%)
-              }
-          
-              .SubmitButton {
-                  @include submit-button;
-                  color: white;
-                  margin: min(30px);
-              }
-      
-              h4 {
-                  color: white;
-                  padding: 19px;
-              }
-      }
+       
+                input {
+                  // width: 100%;
+                    padding-top: 10px ;
+                    padding-bottom: 10px ;
+                    padding-left: min(3%);
+                    padding-right: min(3%);
+                    min-width: 60%;
+                    max-width: 40%;
+                    border-radius: 5px;
+                    border-color: rgb(235, 232, 232);
+                    margin-left: min(10%);
+                    margin-right: min(10%)
+                }
+            
+                .SubmitButton {
+                    @include submit-button;
+                    color: white;
+                    margin: min(30px);
+                }
+        
+                h4 {
+                    color: white;
+                    padding: 19px;
+                    //margin-top: 5px
+                }
+        }
 }
 
 
-/*............media queries...........*/
-
-@mixin media-medium-phone {
-  @media screen and (min-width: 400px) {
-    @content;
-  }
-}
-
-@mixin media-tablet {
-    @media screen and (min-width: 480px) {
-      @content;
-    }
-  }
-
-  @mixin media-pc {
-    @media screen and (min-width: 1024px) {
-      @content;
-    }
-  }

@@ -10,6 +10,12 @@
     @include SignInAndSignUp;
     
     .SignInForm {
-        height: min(50%);
+        height: 45%;
+        width: min(80%);
+
+        @include media-pc {
+            width: 45%
+        }
     }
 }
+
