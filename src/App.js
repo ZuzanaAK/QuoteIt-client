@@ -68,7 +68,7 @@ class App extends Component {
       this.setState({
         loggedInUser: response.data
       }, () => {
-        this.props.history.push("/")
+        this.props.history.push("/user-quotes")
       })
     })
     .catch((error) => {
@@ -92,7 +92,7 @@ class App extends Component {
       this.setState({
         loggedInUser: response.data
       }, () => {
-        this.props.history.push("/")
+        this.props.history.push("/user-quotes")
       })
     })
     .catch((err)=>{

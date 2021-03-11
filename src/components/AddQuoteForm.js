@@ -20,11 +20,14 @@ class AddQuoteForm extends React.Component {
             
           </form>
         ) : (
-          <div className="SignInMessage">
-            <h5>Please sign in first to add a quote.</h5>
-            <Link className="Link" to="/sign-in">Sign In</Link>
-            <Link className="Link" to="/sign-up">Sign Up</Link>
-          </div>
+          
+            <div className="SignInMessage">
+              <p>Please sign in first to add a quote.</p>
+              <Link className="Link" to="/sign-in">Sign In</Link>
+              <p>If you don't have an account yet, please sign up.</p>
+              <Link className="Link" to="/sign-up">Sign Up</Link>
+            </div>
+          
         )}
       </div>
     );

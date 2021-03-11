@@ -1,29 +1,39 @@
 .AddQuoteForm {
     @include NowOrNeverImg;
-
-    @include flex-box-centre; 
+    width: 100vw;
+    height:180vh;
+    // @include flex-box-centre; 
+    display: flex;
+    justify-content: center;
 
     .FormContainer {
         @include flex-box-centre;
+        width: 90%;
+        height: 70%;
         flex-direction: column;
         margin-top: 40px;
+        background-color: #43AA8B;
+        border-radius: 5px;
+
+        @include media-pc {
+            width: 40%;
+        }
+
+        @include media-tablet {
+            width: 60%
+        }
 
         h4 {
-            color: #90BE6D;
-            padding: 5px;
-            border: white;
-            text-shadow: -1px 1px 0 #000;
-            text-shadow: 1px 1px 0 #000;
-            text-shadow: 1px -1px 0 #000;
-            text-shadow: -1px -1px 0 #000;
+            color:white;
+            padding-bottom: 10px;
         }
 
         .FormField {
             display: flex;
-            width: 80%;
+            width: 70%;
             margin-bottom: 15px;
             font-size: 15px;
-           // border-radius: 6px;
+            border-radius: 5px;
         }
 
         ::placeholder { 
@@ -34,9 +44,7 @@
             
           }
           textarea[type=text] {
-           
             padding: 20px;
-             
           }
 
 
@@ -56,8 +64,31 @@
 
     }
 
+/*.....for when user is not signed in........*/
+
     .SignInMessage {
         @include SignInFirst;
+        //@include flex-box-centre;
+        flex-direction: column;
+        margin-top: 40px;
+        border-radius: 5px;
+        height: 30%;
+
+            @include media-pc {
+                width: 45%
+            }
+
+            @include media-pc {
+                width: 50%
+            }
+
+            // .Link {
+            //     @include flex-box-centre;
+            //     @include submit-button;
+            //     text-decoration: none;
+            //     color: white;
+            //     margin-left: 30px;
+            //  }
     }
 }
 

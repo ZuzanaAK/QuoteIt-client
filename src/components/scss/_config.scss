@@ -42,7 +42,7 @@ $menu-color: rgba(237,237,237, 0.7);
 @mixin submit-button {
     border-radius: 5px;
     padding: 15px 22px 15px 22px;
-    margin-top: 22px;
+    margin-top: 15px;
     background-color: #F94144;
    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,20 +65,24 @@ $menu-color: rgba(237,237,237, 0.7);
     
   }
 
-@mixin SignInFirst {
+/*............Use When Not SignedIn and Clicked On Profile or Add Quote...........*/
 
-        width: 100vw;
-        height: 100vh;
-        margin: 25px;
-        background-color: white;
-       
+@mixin SignInFirst {
+        @include flex-box-centre;
+        width: 80%;
+        height: 30%;
+        margin: 20px;
+        background-color: #43AA8B;
+        
     
-         h5 {
-            margin: 30px;
-    
+         p {
+            margin: 15px;
+     
+            color: white;
         }
     
         .Link {
+          @include flex-box-centre;
             @include submit-button;
             text-decoration: none;
             color: white;
