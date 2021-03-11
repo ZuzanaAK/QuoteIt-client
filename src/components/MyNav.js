@@ -39,7 +39,7 @@ function MyNav(props) {
                 
             </nav>
             <div className="ImgContainer">
-                <img className="ImgLogo" src={logo}/>
+                <Link to="/"><img className="ImgLogo" alt="logoImage" src={logo}/></Link>
             </div>
         </div>
     )
