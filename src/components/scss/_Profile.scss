@@ -16,7 +16,6 @@
         text-decoration: none;
 
         .SubmitButton {
-        
             @include submit-button;
             color: white;
             margin-left: 25px;

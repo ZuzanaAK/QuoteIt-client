@@ -15,14 +15,12 @@ body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    //@include flex-box-centre
-
-
+    overflow-x: hidden; 
 }
 
-// .styleApp {
-//     width: 100%;
-// }
+.styleApp {
+    width: 100%;
+}
 
 
 .menu-nav_link {
