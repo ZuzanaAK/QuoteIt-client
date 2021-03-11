@@ -1,8 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72fa0007-236e-45c0-bed0-966badd8d6c3/deploy-status)](https://app.netlify.com/sites/quote-it/deploys)
 
 # About QuoteIt - React App
-
-QuoteIt was created as a final project of Full-Stack Web Development Bootcamp at Ironhack. 
+ 
 QuoteIt is a simple fully-responsive React app, built with mobile-first approach in mind, that allows users to store their favorite quotes and share them with others. An external quotes API was implemented to show random quotes for every time when page is refreshed.
 
 ## Structure
