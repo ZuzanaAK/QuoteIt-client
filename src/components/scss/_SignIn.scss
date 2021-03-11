@@ -4,50 +4,12 @@
     // background-size: cover;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
-    .SignInForm {
-        // display: flex;
-        // justify-content: center;
-        height: min(50%);
-        background-color: #43AA8B;
-        @include flex-box-centre;
-        margin-top: 50px;
-        margin-left: 20%;
-        margin-right: 20%;
-        //display: flex;
-        width: 80%;
-        flex-direction: column;
-        border-radius: 5px;
-
-        @include media-pc {
-            width: 40%
-        }
+    @include SignInAndSignUp;
     
-                input {
-                   // width: 100%;
-                    padding-top: 10px ;
-                    padding-bottom: 10px ;
-                    padding-left: min(3%);
-                    padding-right: min(3%);
-                    min-width: 60%;
-                    max-width: 40%;
-                    border-radius: 5px;
-                    border-color: rgb(235, 232, 232);
-                    margin-left: min(10%);
-                    margin-right: min(10%)
-                }
-            
-                .SubmitButton {
-                    @include submit-button;
-                    color: white;
-                    margin: min(30px);
-                }
-        
-                h4 {
-                    color: white;
-                    padding: 19px;
-                }
+    .SignInForm {
+        height: min(50%);
     }
 }

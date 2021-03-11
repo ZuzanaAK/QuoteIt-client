@@ -64,6 +64,56 @@ $menu-color: rgba(237,237,237, 0.7);
         }
 }
 
+/*............Sign In and Sign Up Components...........*/
+
+@mixin SignInAndSignUp {
+
+    .SignInForm {
+      // display: flex;
+      // justify-content: center;
+      
+      background-color: #43AA8B;
+      @include flex-box-centre;
+      margin-top: 50px;
+      margin-left: 20%;
+      margin-right: 20%;
+      //display: flex;
+      width: 80%;
+      flex-direction: column;
+      border-radius: 5px;
+
+      @include media-pc {
+          width: 40%
+      }
+
+              input {
+                // width: 100%;
+                  padding-top: 10px ;
+                  padding-bottom: 10px ;
+                  padding-left: min(3%);
+                  padding-right: min(3%);
+                  min-width: 60%;
+                  max-width: 40%;
+                  border-radius: 5px;
+                  border-color: rgb(235, 232, 232);
+                  margin-left: min(10%);
+                  margin-right: min(10%)
+              }
+          
+              .SubmitButton {
+                  @include submit-button;
+                  color: white;
+                  margin: min(30px);
+              }
+      
+              h4 {
+                  color: white;
+                  padding: 19px;
+              }
+      }
+}
+
+
 /*............media queries...........*/
 
 @mixin media-medium-phone {
