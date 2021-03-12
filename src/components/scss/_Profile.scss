@@ -25,6 +25,7 @@
 
 
     .QuoteDetailContainer {
+        border-radius: 5px;
         @include quote-container;
         background-color: white;
     }
