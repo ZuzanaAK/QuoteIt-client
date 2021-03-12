@@ -47,7 +47,7 @@ class QuoteDetail extends Component {
                     } */}
                     
                     
-                    <Link className="LinkHome" to="/"><h4>BACK HOME</h4></Link>
+                    <Link className="LinkHome" to="/"><h4>GO BACK HOME</h4></Link>
                 </div>
             </div>
         )

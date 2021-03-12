@@ -38,9 +38,45 @@ function MyNav(props) {
                 </div>
                 
             </nav>
-            <div className="ImgContainer">
+            <div className="ImgContainerMobile">
                 <Link to="/"><img className="ImgLogo" alt="logoImage" src={logo}/></Link>
             </div>
+
+
+
+        <nav>
+            <div class="NavBarPc">
+
+                    <ul>
+                    
+                        <Link className="menu-nav_link active" to="/"><li>Home</li></Link>
+                   
+                        <Link className="menu-nav_link" to="/add-quote"><li>Add Quote</li></Link>
+               
+                        <Link className="menu-nav_link" to="/user-quotes"><li>Profile</li></Link>
+                  
+                    {
+                        props.loggedInUser ? (
+                           
+                                <button className="LogoutButton" onClick={props.onLogout}><li>Logout</li></button>
+                          
+                        ) : (
+                            
+                                <ul className="SignInUpNavCont">
+                                    <Link id="SignInAndUp" className="menu-nav_link" to="/sign-in"><li>Sign In</li></Link>
+                                    <Link id="SignInAndUp" className="menu-nav_link" to="/sign-up"><li>Sign Up</li></Link>
+                                </ul>
+                                  
+                        )
+                    }
+                    </ul>
+                    <Link to="/"><img className="ImgLogo" alt="logoImage" src={logo}/></Link>
+                </div>
+               
+                    
+                
+            </nav>
+        
         </div>
     )
 }

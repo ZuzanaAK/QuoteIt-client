@@ -8,8 +8,8 @@ class QuoteList extends React.Component {
 
   backgroundColor = [
     "#F94144",
-    "#F3722C",
-    "#F8961E",
+     "#F3722C",
+    // "#F8961E",
     "#90BE6D",
     "#43AA8B",
     "#577590",
@@ -17,7 +17,8 @@ class QuoteList extends React.Component {
 
   render() {
     return (
-      <div className="QuoteList wrapper">
+      <div className="QuoteList">
+          
           
         {this.props.quotes.map((quote, index) => {
   
@@ -43,6 +44,7 @@ class QuoteList extends React.Component {
            
           );
         })}
+       
       </div>
     );
   }
