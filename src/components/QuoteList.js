@@ -8,7 +8,7 @@ class QuoteList extends React.Component {
 
   backgroundColor = [
     "#F94144",
-     "#F3722C",
+     //"#F3722C",
     // "#F8961E",
     "#90BE6D",
     "#43AA8B",

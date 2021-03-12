@@ -1,7 +1,8 @@
 .QuoteDetail {
     display: flex;
     justify-content: center;
-    @include NowOrNeverImg;
+    //@include NowOrNeverImg;
+    background-color: #adb9b9;
     height: 100vh;
     
 

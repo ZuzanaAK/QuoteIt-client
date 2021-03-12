@@ -1,5 +1,6 @@
 .Profile {
-    @include NowOrNeverImg;
+   // @include NowOrNeverImg;
+    background-color: #adb9b9;
     @include flex-box-centre;
     flex-direction: column;
     width: 100%;
@@ -51,7 +52,8 @@
 /*.....for when user is not signed in........*/
 
 .SignInContainer {
-    @include NowOrNeverImg;
+    //@include NowOrNeverImg;
+    background-color: #adb9b9;
     display: flex;
     justify-content: center;
     height: 170vh;
