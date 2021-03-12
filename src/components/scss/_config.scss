@@ -21,6 +21,12 @@ $menu-color: rgba(237,237,237, 0.7);
     }
   }
 
+  @mixin small-pc {
+    @media screen and (min-width: 1024px) and (max-width: 1050px) {
+      @content;
+    }
+  }
+
   @mixin media-pc {
     @media screen and (min-width: 1024px) {
       @content;
@@ -43,7 +49,7 @@ $menu-color: rgba(237,237,237, 0.7);
     border-radius: 5px;
     padding: 15px 22px 15px 22px;
     margin-top: 15px;
-    background-color: #F94144;
+    background-color: #577590;
    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 17px;
