@@ -18,20 +18,13 @@
         .SubmitButton {
             @include submit-button;
             color: white;
-            //margin-left: 25px;
         }
 
     }
 
-    // .Container {
-    //     @include flex-box-centre;
-    //     flex-direction: column;
-    // }
-
 
     .QuoteDetailContainer {
         @include quote-container;
-        //background-image:url(../img/pexels-steve-johnson-1843717.jpg);
         background-color: white;
     }
 
