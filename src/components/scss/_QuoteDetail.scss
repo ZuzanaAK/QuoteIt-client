@@ -3,21 +3,40 @@
     justify-content: center;
     @include NowOrNeverImg;
     height: 100vh;
+    
 
     .DetailContainer {
-        margin: 25px;
-        background-color: #90BE6D;
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+        background-color: #43AA8B;
+        border-radius: 2%;
+        width: 80%;
+        height: 60%;
+
+        @include media-tablet {
+            width: 50%;
+        }
+
+        @include media-pc {
+            width: 40%;
+        }
 
         h4, p {
-            margin: 25px;
+            color: white;
+            padding: 5px;
+            margin-left: 20px;
         }
 
         h4 {
-            color: white;
-            text-shadow: -1px 1px 0 #000;
-            text-shadow: 1px 1px 0 #000;
-            text-shadow: 1px -1px 0 #000;
-            text-shadow: -1px -1px 0 #000;
+            margin: 20px;
         }
+
+        .LinkHome {
+            display: flex;
+            text-decoration: none;
+            justify-content: center;  
+        }
+ 
     }
 }

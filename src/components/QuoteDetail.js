@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 import "../components/scss/main.scss"
 
+
+
 class QuoteDetail extends Component {
 
     state ={
@@ -43,6 +45,9 @@ class QuoteDetail extends Component {
                         null
                         )
                     } */}
+                    
+                    
+                    <Link className="LinkHome" to="/"><h4>BACK HOME</h4></Link>
                 </div>
             </div>
         )
