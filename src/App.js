@@ -157,10 +157,10 @@ class App extends Component {
   }
 
   handleDelete = (quoteId) => {
-    console.log("I AM IN THE DELETE", quoteId)
+    
     axios.delete(`${process.env.REACT_APP_API_URL}/quotes/${quoteId}`, {}, {withCredentials: true})
       .then(() => {
-        console.log("WE ARE INSIDE DELETE THEN BLOCK")
+        
           let filteredQuotes = this.state.quotes.filter((quote) => {
               return quote._id !== quoteId
           })
@@ -168,7 +168,7 @@ class App extends Component {
           this.setState({
             quotes: filteredQuotes
           }, () => {
-            this.props.history.push('/user-quotes')
+            this.props.history.push('/')
           })
       })
       .catch((err)=> console.log(err))
