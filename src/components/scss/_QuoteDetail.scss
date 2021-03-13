@@ -3,7 +3,8 @@
     justify-content: center;
     //@include NowOrNeverImg;
     background-color: #adb9b9;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     
 
     .DetailContainer {
@@ -13,7 +14,7 @@
         background-color: #43AA8B;
         border-radius: 2%;
         width: 80%;
-        height: 90%;
+        height: 100%;
 
         @include media-tablet {
             width: 50%;
